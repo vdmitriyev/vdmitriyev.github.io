@@ -1,5 +1,6 @@
 Title: Article for PhD Students
 Date: 2015-01-28 11:40
+Tags: collection, phd, research, tips
 
 As time of your master degree pass by, or any other "after big study activity", people stars to think about the future. And one of the possible "future step" that they consider as an important and very prominent one is doing PhD.
 

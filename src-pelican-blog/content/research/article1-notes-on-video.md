@@ -1,5 +1,6 @@
 Title: Notes on Video “How to Write a Great Research Paper”
 Date: 2014-04-28 00:00
+Tags: notes, paper, publication, research, video
 
 Short notes (or summary) taken while watching lecture [How to Write a Great Research Paper](https://www.youtube.com/watch?v=g3dkRsTqdDA) given by Professor Simon Peyton Jones (Microsoft Research).
 

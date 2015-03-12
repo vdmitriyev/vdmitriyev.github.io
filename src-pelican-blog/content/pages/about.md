@@ -1,10 +1,10 @@
-Title: My super title
-Date: 2010-12-03 10:20
+Title: About Viktor Dmitriyev
+Date: 2015-03-12 22:54
 Modified: 2010-12-05 19:30
-Category: Python
+Category: Example
 Tags: pelican, publishing
 Slug: my-super-post
-Authors: Alexis Metaireau, Conan Doyle
+Authors: Viktor Dmitriyev
 Summary: Short version for index and feeds
 
 This is the content of my super blog post.

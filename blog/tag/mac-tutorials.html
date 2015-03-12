@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Yet Another Blog (YAB)</title>
+        <title>Yet Another Blog (YAB) - mac tutorials</title>
         <link rel="stylesheet" href="http://vdmitriyev.github.io/blog/theme/css/main.css" />
 
         <!--[if IE]>
@@ -21,42 +21,23 @@
                     <li><a href="http://vdmitriyev.github.io/blog/category/raznoe.html">Разное</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-<section id="content" class="body">
-<h1>Archives for Yet Another Blog (YAB)</h1>
 
-<dl>
-    <dt>March 2015</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/title-list-of-python-books-to-bring-your-python-skills-one-level-up.html">Title: List of Python Books to Bring Your Python Skills One Level Up</a></dd>
-    <dt>February 2015</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/proverka-pravopisaniia-russkogo-iazyka-v-notepad.html">Проверка правописания русского языка в Notepad++</a></dd>
-    <dt>February 2015</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/worth-checking-resources-on-visualization.html">Worth Checking Resources On Visualization</a></dd>
-    <dt>February 2015</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/copy-from-mac-os-to-the-hdd-with-ntfs-file-system.html">Copy from Mac OS to the HDD with NTFS File System</a></dd>
-    <dt>January 2015</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/article-for-phd-students.html">Article for PhD Students</a></dd>
-    <dt>January 2015</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/collection-of-resource-for-searching-scientific-publications.html">Collection of Resource for Searching Scientific Publications</a></dd>
-    <dt>January 2015</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/one-line-tips-for-remembering-more.html">"One line" Tips for Remembering More</a></dd>
-    <dt>September 2014</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/how-to-understand-yourself-simplest-possible-guideline-and-drawbacks-of-other-methods.html">How to Understand Yourself: Simplest Possible Guideline and Drawbacks of Other Methods</a></dd>
-    <dt>April 2014</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/notes-on-video-how-to-write-a-great-research-paper.html">Notes on Video “How to Write a Great Research Paper”</a></dd>
-    <dt>April 2014</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/there-are-no-good-days-to-start-new-business-pick-randomly.html">There Are No Good Days To Start New Business, Pick Randomly</a></dd>
-    <dt>November 2013</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/mysli-o-privychkakh.html">Мысли о привычках</a></dd>
-    <dt>March 2013</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/cebit-2013.html">CeBIT 2013</a></dd>
-    <dt>December 2011</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/iitu-sorting-algorithms.html">IITU Sorting Algorithms</a></dd>
-    <dt>September 2010</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/lektsiia-ot-sozdatelia-stl-a-stepanov.html">Лекция от создателя STL А. Степанов</a></dd>
-    <dt>August 2010</dt>
-    <dd><a href="http://vdmitriyev.github.io/blog/onlain-resursy-codecademycom-i-codingbatcom.html">Онлайн ресурсы codecademy.com и codingbat.com</a></dd>
-</dl>
-</section>
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/copy-from-mac-os-to-the-hdd-with-ntfs-file-system.html">Copy from Mac OS to the HDD with NTFS File System</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-02-02T21:05:00+01:00">
+                Published: February 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
+        </address>
+<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
+<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/howtos.html">howtos</a> <a href="http://vdmitriyev.github.io/blog/tag/mac-tutorials.html">mac tutorials</a> <a href="http://vdmitriyev.github.io/blog/tag/trick.html">trick</a> </p>
+</footer><!-- /.post-info --><p>Even in the 21th century it's very tricky to accomplish some simple tasks like copying the files from the Mac OS  to the HDD, which is formatted as NTFS. To overcome this issues without paying money, but investing a bit of your time, a plenty of patience, some "searching with the google skills", command line and good luck are required. After researching this question for a while, and trying some very slow solutions (SFTP and other "alike" copying techniques that utilizes local network) I finally found a script that worked for me.</p>
+<p>Most of the solutions online advises to edit '<strong>/etc/fstab'</strong> file on the Mac OS in a way described by this article <a href="http://computers.tutsplus.com/tutorials/quick-tip-how-to-write-to-ntfs-drives-in-os-x-mavericks--cms-21434">Quick Tip: How to Write to NTFS Drives in OS X Mavericks</a>. But simple following instructions didn't work for me. And after searching more, I came across ready bash script that was performing the same steps as described in an online articles. And finally it worked for me. You can find solution which I used for myself <a href="https://gist.github.com/vdmitriyev/8d240233a6ae6a6e0615">here</a>, original script by <a href="https://github.com/noma4i">@noma4i</a> can be found <a href="https://github.com/noma4i/NativeNTFS-OSX/blob/master/ntfs.sh">here</a>.</p>                </article>
+            </aside><!-- /#featured -->
         <section id="extras" class="body">
                 <div class="blogroll">
                         <h2>blogroll</h2>

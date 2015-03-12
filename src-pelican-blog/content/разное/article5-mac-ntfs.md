@@ -1,5 +1,6 @@
 Title: Copy from Mac OS to the HDD with NTFS File System
 Date: 2015-02-02 21:05
+Tags: howtos, mac tutorials, trick
 
 Even in the 21th century it's very tricky to accomplish some simple tasks like copying the files from the Mac OS  to the HDD, which is formatted as NTFS. To overcome this issues without paying money, but investing a bit of your time, a plenty of patience, some "searching with the google skills", command line and good luck are required. After researching this question for a while, and trying some very slow solutions (SFTP and other "alike" copying techniques that utilizes local network) I finally found a script that worked for me.
 

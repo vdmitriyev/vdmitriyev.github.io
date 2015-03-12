@@ -1,11 +1,12 @@
-Title: Collection of Resource for Searching Scientific Publcations
+Title: Collection of Resource for Searching Scientific Publications
 Date: 2015-01-26 15:20
+Tags: computer science, publication
 
 ### About
 
 Collection of the online resources and some other additional tricks for searching research publication on the web.
 
-### Collection of Resource for Searching Scientific Publcations<
+### Collection of Resource for Searching Scientific Publications
 
 * [http://arxiv.org/](http://arxiv.org/)
     - You can even subscribed to the weekly (or daily) e-mail of the service

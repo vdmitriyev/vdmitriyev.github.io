@@ -1,6 +1,6 @@
 @echo off
 REM @author Viktor Dmitriyev
-cd ../blog/
+cd ..
 popd .
 python -m SimpleHTTPServer 8000
 pushd .

@@ -13,7 +13,7 @@ except Exception, ex:
 
 AUTHOR = u'Viktor Dmitriyev'
 SITENAME = u'Yet Another Blog (YAB)'
-#SITEURL = 'http://localhost:8000'
+#SITEURL = 'http://localhost:8000/blog'
 SITEURL = 'http://vdmitriyev.github.io/blog'
 
 PATH = 'content'

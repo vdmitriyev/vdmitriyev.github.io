@@ -27,6 +27,17 @@ or use pre-shipped ```bat``` script
 run-simple-http.bat
 ```
 
+### Personal configurations
+you need to create ```personal_configs.py``` file and fill following fields:
+```
+#
+# some personal configurations
+#
+GOOGLE_ANALYTICS = '<YOUR-GOOGLE-ANALYTICS-UA-CODE>'
+```
+
+More about configs and configs themselves you can find in pelican's [manual](http://docs.getpelican)com/en/3.5.0/settings.html)
+
 ### Author
 
 * Viktor Dmitriyev

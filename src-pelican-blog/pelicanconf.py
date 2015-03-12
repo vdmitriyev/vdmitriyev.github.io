@@ -2,6 +2,17 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+
+
+try:
+    import os
+    import sys
+    sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)) + '\\')
+    import personal_configs as configs
+except Exception, ex:
+    print '[e] exception: {}'.format(str(ex))
+    pass
+
 AUTHOR = u'Viktor Dmitriyev'
 SITENAME = u'Yet Another Blog (YAB)'
 #SITEURL = 'http://localhost:8000'
@@ -52,3 +63,8 @@ DEFAULT_PAGINATION = False
 #RELATIVE_URLS = True
 
 OUTPUT_PATH = '../blog/'
+
+try:
+    GOOGLE_ANALYTICS = configs.GOOGLE_ANALYTICS
+except Exception, ex:
+    pass

@@ -1,4 +1,5 @@
 *.pyc
-output\*
-cache\*
+output/*
+cache/*
 README.html
+personal_configs.py

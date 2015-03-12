@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-
-
 try:
     import os
     import sys
@@ -53,9 +51,11 @@ MENUITEMS = (
 #          ('Jinja2', 'http://jinja.pocoo.org/'),
 #          ('You can modify those links in your config file', '#'),)
 
-# # Social widget
-SOCIAL = (('twitter', 'https://twitter.com/vdmitriyev'),
-          ('tumblr', 'http://dmitriyev.tumblr.com/'))
+# Social Widgets in Blogroll section
+try:
+    LINKS = configs.LINKS
+except Exception, ex:
+    pass
 
 DEFAULT_PAGINATION = False
 
@@ -63,8 +63,10 @@ DEFAULT_PAGINATION = False
 #RELATIVE_URLS = True
 
 OUTPUT_PATH = '../blog/'
+#STATIC_PATHS = ['images']
 
 try:
     GOOGLE_ANALYTICS = configs.GOOGLE_ANALYTICS
 except Exception, ex:
     pass
+

@@ -10,7 +10,7 @@ Date: 2015-01-23 00:00
 7. Impress, associate, repeat
 8. Accept that remembering more it's a hard work
 
-
+</br>
 
 ## List of quick memorization techniques
 
@@ -22,15 +22,16 @@ Date: 2015-01-23 00:00
 ***Above mentioned techniques are not for the long-term memory.
 For the "LTM" they should be combined with other "continuosuly repeating" techniques***
 
-
+</br>
 
 ## Take Notes Properly
 3 Step process = (a) read + (b) summarize + (c) list keywords
-* (a) normal read
-* (b) read again and write down key points
+
+* (a) normal read
+* (b) read again and write down key points
 * (c) use summary for keywords list
 
-
+</br>
 
 ## Links to the resources used
 1. [11 Great Ways to Improve Your Memory](http://psychology.about.com/od/cognitivepsychology/tp/memory_tips.htm)

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Copy from Mac OS to the HDD with NTFS File System</title>
+        <link rel="stylesheet" href="http://vdmitriyev.github.io/blog/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://vdmitriyev.github.io/blog/">Yet Another Blog (YAB) </a></h1>
+                <nav><ul>
+                    <li><a href="http://vdmitriyev.github.io/blog">Main</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/interesting.html">Interesting</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/research.html">Research</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/thoughts.html">Thoughts</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/raznoe.html">Разное</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://vdmitriyev.github.io/blog/copy-from-mac-os-to-the-hdd-with-ntfs-file-system.html" rel="bookmark"
+           title="Permalink to Copy from Mac OS to the HDD with NTFS File System">Copy from Mac OS to the HDD with NTFS File System</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2015-02-02T21:05:00+01:00">
+                Published: February 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
+        </address>
+<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
+
+</footer><!-- /.post-info -->      <p>Even in the 21th century it's very tricky to accomplish some simple tasks like copying the files from the Mac OS  to the HDD, which is formatted as NTFS. To overcome this issues without paying money, but investing a bit of your time, a plenty of patience, some "searching with the google skills", command line and good luck are required. After researching this question for a while, and trying some very slow solutions (SFTP and other "alike" copying techniques that utilizes local network) I finally found a script that worked for me.</p>
+<p>Most of the solutions online advises to edit '<strong>/etc/fstab'</strong> file on the Mac OS in a way described by this article <a href="http://computers.tutsplus.com/tutorials/quick-tip-how-to-write-to-ntfs-drives-in-os-x-mavericks--cms-21434">Quick Tip: How to Write to NTFS Drives in OS X Mavericks</a>. But simple following instructions didn't work for me. And after searching more, I came across ready bash script that was performing the same steps as described in an online articles. And finally it worked for me. You can find solution which I used for myself <a href="https://gist.github.com/vdmitriyev/8d240233a6ae6a6e0615">here</a>, original script by <a href="https://github.com/noma4i">@noma4i</a> can be found <a href="https://github.com/noma4i/NativeNTFS-OSX/blob/master/ntfs.sh">here</a>.</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="https://twitter.com/vdmitriyev">Twitter</a></li>
+                            <li><a href="https://vdmitriyev.wordpress.com/">Wordpress</a></li>
+                            <li><a href="http://dmitriyev.tumblr.com/">Tumblr</a></li>
+                            <li><a href="https://github.com/vdmitriyev">GitHub</a></li>
+                            <li><a href="http://www.researchgate.net/profile/Viktor_Dmitriyev">ResearchGate</a></li>
+                            <li><a href="http://orcid.org/0000-0001-5661-4587">Orcid</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-59176821-3']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

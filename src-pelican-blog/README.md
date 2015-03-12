@@ -30,10 +30,19 @@ run-simple-http.bat
 ### Personal configurations
 you need to create ```personal_configs.py``` file and fill following fields:
 ```
+#!/usr/bin/env python
+# -*- coding: utf-8 -*- #
+
 #
-# some personal configurations
+# personal configurations
 #
-GOOGLE_ANALYTICS = '<YOUR-GOOGLE-ANALYTICS-UA-CODE>'
+
+GOOGLE_ANALYTICS = u'UA-59176821-3'
+
+LINKS = (('Twitter', '#'),
+          ('Wordpress', '#'),
+          ('Tumblr', '#')
+          )
 ```
 
 More about configs and configs themselves you can find in pelican's [manual](http://docs.getpelican)com/en/3.5.0/settings.html)

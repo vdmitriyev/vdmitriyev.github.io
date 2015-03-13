@@ -37,7 +37,7 @@ you need to create ```personal_configs.py``` file and fill following fields:
 # personal configurations
 #
 
-GOOGLE_ANALYTICS = u'UA-59176821-3'
+GOOGLE_ANALYTICS = u'UA-'
 
 LINKS = (('Twitter', '#'),
           ('Wordpress', '#'),

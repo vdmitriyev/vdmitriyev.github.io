@@ -135,11 +135,12 @@ Now go to the "HTML5 Application Dashboard" and follow offered URL as it shown o
     ![SAP HANA Cloud Pelican Blog](images/blogpelicansaphanacloud/12.png)
 </center> 
 
-**Congratulation!** 
-
-
-If you succeeded in accomplish all the mentioned above steps, you should some sort of blog as it shown below. Now you can keep writing your blog posts in markdown, compile them into static HTML with help of Python package Pelican and host your blog in the SAP HANA Cloud. The description of the process how to work with Python and it's Pelican package was left out from this blog and can be found inside previously mentioned GitHub repository [here](https://github.com/vdmitriyev/saphanacloud-static-blog-example/tree/master/src-pelican).
-
+Your final result should look like this.
 <center> 
     ![SAP HANA Cloud Pelican Blog](images/blogpelicansaphanacloud/13.png)
 </center> 
+
+**Congratulation!** 
+
+If you succeeded in accomplish all the mentioned above steps, you should some sort of blog as it shown above. Now you can keep writing your blog posts in markdown, compile them into static HTML with help of Python package Pelican and host your blog in the SAP HANA Cloud.
+The description of the process how to work with Python and it's Pelican package was left out from this blog and can be found inside previously mentioned GitHub repository [here](https://github.com/vdmitriyev/saphanacloud-static-blog-example/tree/master/src-pelican).

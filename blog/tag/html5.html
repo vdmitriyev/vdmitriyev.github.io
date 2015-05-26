@@ -43,7 +43,7 @@
 <li>Very popular and widely used high-level programming language</li>
 </ul>
 </li>
-<li><a href="http://docs.getpelican.com/en/3.5.0/">Pelican 3.5.0</a> <ul>
+<li><a href="http://docs.getpelican.com/en/3.5.0/">Pelican 3.5.0</a><ul>
 <li>This is of the the python packages that is able to generate static html pages from markdown</li>
 </ul>
 </li>
@@ -68,33 +68,33 @@
 <h3>Creating Empty HTML5 Application</h3>
 <p>After getting to the <a href="https://account.hanatrial.ondemand.com/">SAP HANA Cloud</a> cockpit select from the main menu on the left "HTML5 Applications" (as it's shown on the image).</p>
 <p><center>
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/00.png" />
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/00.png" />
 </center></p>
 <p>Then go and create new HTML5 application by selecting "New Application", as it's shown on the image.</p>
 <p><center>
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/01.png" />
-</center> </p>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/01.png" />
+</center></p>
 <p>Give an name to the new application that you are creating. For instance, I gave a simple name "blog". After setting the name to a value of your choice, click save button.</p>
 <p><center>
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/02.png" />
-</center> </p>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/02.png" />
+</center></p>
 <p>Congratulations, you just created your own HTML5 application inside SAP HANA Cloud. Now you should see something similar to the image below. I want to stress, that you <strong>"only"</strong> created application and it's not running for a moment, to run it, you will need to set a version to your commit from git and after only that you will be able to see rendering page in you browser. It will be demonstrated later on.</p>
 <p><center>
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/03.png" />
-</center> </p>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/03.png" />
+</center></p>
 <p>Navigate to your newly created application by click it's name. For a moment, you should see something similar to the image below. The image is telling you that the application is not yet activate.</p>
 <p><center>
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/04.png" />
-</center> </p>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/04.png" />
+</center></p>
 <p>After navigate to sub-menu titled "Visioning", you will see following important for us fields (see the image below) <strong>Git Repository Url</strong> and <strong>Actions</strong></p>
 <p>The URL that is shown to you under the title <strong>Git Repository Url</strong> will be used later on for the communication between you local git repository and remote repository hosted on SAP HANA Cloud.
 <center>
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/05-01.png" />
-</center> </p>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/05-01.png" />
+</center></p>
 <p>Menu option <strong>Actions</strong> is very important to make SAP HANA Cloud understand which exactly version of the repository to render (activate or run). Without setting version to your particular commit, the button that make application run won't be even enabled.</p>
-<p><center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/05-02.png" />
-</center> </p>
+<p><center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/05-02.png" />
+</center></p>
 <h3>Cloning Created HTML5 Application on Computer</h3>
 <p>After creating the first commit (that was actually created automatically by the system) you need to copy <strong>Git Repository Url</strong> and run command line utility (Windows: cmd, Linus: bash or similar). Before cloning git repository that was created inside SAP HANA Cloud, you need to have git client to be installed on your computer. You can downloed one from <a href="http://git-scm.com/">http://git-scm.com/</a>. Open you terminal, navigate to the directory where you would like to clone recently created repository and type following command (don't forget to replace <strong>Your Git Repository Url</strong> with your own one):</p>
 <div class="highlight"><pre>git clone &lt;Your Git Repository Url&gt;
@@ -102,20 +102,20 @@
 
 
 <p>You terminal should look like on the image below.</p>
-<p><center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/06.png" />
-</center> </p>
+<p><center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/06.png" />
+</center></p>
 <p>The git server will ask you to type in your credentials, you have to use the the same credentials you used to authorize yourself inside SAP HANA Cloud Cockpit (the same one your are using for scn.sap.com). Image below demonstrates how it should look like.</p>
-<p><center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/07.png" />
-</center> </p>
+<p><center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/07.png" />
+</center></p>
 <p>After creating git clone of your repository from SAP HANA Cloud, you can start working with it. Basically, you can upload any web related files (HTML, CSS,JS, etc.).</p>
 <p>For this particular example I used <a href="https://www.python.org/">Python 2.7</a>, it's <a href="http://docs.getpelican.com/en/3.5.0/">Pelican 3.5.0</a> package and <a href="http://daringfireball.net/projects/markdown/syntax">Markdown</a> as a main text format for writing the blog posts. To process furher you will need to install <a href="https://www.python.org/">Python 2.7</a>, <a href="http://docs.getpelican.com/en/3.5.0/">Pelican 3.5.0</a> and it's dependencies in order to be able to generate statis HTML files from markdown. Here you can find ready <a href="https://github.com/vdmitriyev/saphanacloud-static-blog-example">GitHub repository</a> with all necessary configurations, scripts and detailed descriptions of it's usage. In order to merge two Git repositories (GitHub and SAP HANA Cloud one) use a simple techniques - keep the SAP HANA Cloud's Git as a main one, and GitHub as a secondary one. Here is how I did it (don't forget to open your terminal):</p>
 <div class="highlight"><pre># clone the SAP HANA Cloud repository
 git clone https://git.hanatrial.ondemand.com/&lt;YOUR-SAP-HANA-CLOUD-USER-ID&gt;/blog
 cd blog
 
-# adding additioanl git repostiry from github 
+# adding additioanl git repostiry from github
 # the name of the repository is github
 git remote add github https://github.com/vdmitriyev/saphanacloud-static-blog-example.git
 
@@ -128,28 +128,28 @@ git push -u origin master
 
 
 <h3>Setting a Version to One of Your Git Commits</h3>
-<p>If you followed order of git command above at the end you will be able to see at your SAP HANA Cloud's HTML5 Application the pre-generated html blog from the GitHub repository. However, the committed and pushed to the SAP HANA Cloud's git changes won't be available in the browser until you will specify the exact version of the commit to be published. </p>
+<p>If you followed order of git command above at the end you will be able to see at your SAP HANA Cloud's HTML5 Application the pre-generated html blog from the GitHub repository. However, the committed and pushed to the SAP HANA Cloud's git changes won't be available in the browser until you will specify the exact version of the commit to be published.</p>
 <p>Navigate to the HTML5 application and select 'Visioning'. After the main working panel will load, click on the to the icon located in the 'Action' column and set desired version (as and example I set '0.0.1'), as it shown on the image below.</p>
-<p><center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/09.png" />
-</center> </p>
+<p><center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/09.png" />
+</center></p>
 <p>After setting the version you should see that the column 'Version' is poiting to the version you just set.</p>
-<p><center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/10.png" />
-</center> </p>
+<p><center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/10.png" />
+</center></p>
 <p>To activate your newly make version, click on the icon in the 'Action' column again and confirm your choice.</p>
-<p><center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/11.png" />
-</center> </p>
+<p><center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/11.png" />
+</center></p>
 <p>Now go to the "HTML5 Application Dashboard" and follow offered URL as it shown on the image below.</p>
-<p><center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/12.png" />
-</center> </p>
+<p><center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/12.png" />
+</center></p>
 <p>Your final result should look like this.
-<center> 
-    <img alt="SAP HANA Cloud Pelican Blog" src="images/blogpelicansaphanacloud/13.png" />
-</center> </p>
-<p><strong>Congratulation!</strong> </p>
+<center>
+    <img alt="SAP HANA Cloud Pelican Blog" src="http://vdmitriyev.github.io/blog/images/blogpelicansaphanacloud/13.png" />
+</center></p>
+<p><strong>Congratulation!</strong></p>
 <p>If you succeeded in accomplish all the mentioned above steps, you should some sort of blog as it shown above. Now you can keep writing your blog posts in markdown, compile them into static HTML with help of Python package Pelican and host your blog in the SAP HANA Cloud.
 The description of the process how to work with Python and it's Pelican package was left out from this blog and can be found inside previously mentioned GitHub repository <a href="https://github.com/vdmitriyev/saphanacloud-static-blog-example/tree/master/src-pelican">here</a>.</p>                </article>
             </aside><!-- /#featured -->

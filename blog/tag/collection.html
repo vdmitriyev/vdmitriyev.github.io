@@ -24,7 +24,61 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/title-list-of-python-books-to-bring-your-python-skills-one-level-up.html">Title: List of Python Books to Bring Your Python Skills One Level Up</a></h1>
+                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/how-to-write-a-team-publication-in-latex-and-dont-get-mad.html">How to write a team publication in LaTeX and dont get mad</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-05-29T18:00:00+02:00">
+                Published: May 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
+        </address>
+<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
+<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> <a href="http://vdmitriyev.github.io/blog/tag/phd.html">phd</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/latex.html">latex</a> <a href="http://vdmitriyev.github.io/blog/tag/writing.html">writing</a> </p>
+</footer><!-- /.post-info --><p><img alt="Don't get mad, get motivated and use LaTeX" src="http://vdmitriyev.github.io/blog/images/random/dont-get-mad-use-latex.png" /></p>
+<p><center>
+<strong>Publishing is not a sprint to the finish line.</strong> </br>
+<strong>There is no finish line.</strong> </br>
+<strong>You just keep on running.</strong> </br>
+via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradElitism</a>
+</center></p>
+<p>A really huge amount of people around the glob use <a href="http://www.latex-project.org/">LaTeX</a> as a primary software tool (or you can say "package") for writing, formating or just maintaining their own texts. Especially, it's very popular word processing package in academia, at least at part that is related to the <a href="http://en.wikipedia.org/wiki/STEM_fields">STEM</a> ( <strong>S</strong>cience, <strong>T</strong>chnology, <strong>E</strong>ngineering, and <strong>M</strong>athematics).</p>
+<p>Usually, the scientific publications are done by some group of people, who are united by some common ideas or just by chance. Before starting process of writing, besides the general ideas and directions of a future publication, normally, the structure of a publication is identified. The early structure identification helps a lot in organizing a proper writing process. The structural organization usually goes beyond the conference (or any other targeted event) driven templates and suggesting and would include some details about the content itself and responsibilities of particular author.</p>
+<p>While writing a collaborative publication, one of the painful and never ending problem is an synchronization of changes. With time, the synchronization starts to be more painful. When the content of the paper is continuously improved by multiple authors. More and more variants (or branches) are created by authors. And the usage of the MS Word (despite it's really amazing, very robust, more than popular tool for creating texts and other types of information) adds a huge amount of overhead.</p>
+<p>In order to write a publication I usually try to organize the process in a following way:</p>
+<ul>
+<li>Separate content of the publication from it's processing part</li>
+<li>Make writing process transparent (host and share all the publication files through the dropbox)</li>
+<li>Organize versioning (default feature of documents hosting services like dropbox)</li>
+<li>Separate part of each author into different TeX files and include them with <em>\input{<PATH-TO-TeX>}</em> directive<ul>
+<li>Obviously, separating each author's part into separate file won't cause</li>
+</ul>
+</li>
+</ul>
+<p>The process of writing is quite simple - you need to write down what you would like to deliver. The tricky part, besides content, is that the LaTeX paper is "a priori" separated into smaller parts and for each part of the paper, the responsible author is assigned. The basic publication structure can be see in this <a href="https://github.com/vdmitriyev/pylatexmerger/tree/master/sample-paper">example publication</a>, it consists out of following folders:</p>
+<ul>
+<li>"abstract" folder contains abstract part of the publication;</li>
+<li>"authors" folder contains all authors listed with accordance to the conference (or other targeted event) template</li>
+<li>"bibliography" folder contains a bibtex formatted file with all cited works</li>
+<li>"models" folder contains the images, diagrams or other graphical resources used within the publication. The root of the folder usually contains the original sources, whether the sub-folder lik "png", contain a exported version of the object in particular format.</li>
+<li>"build-latex-win" folder contains bat files that are able to properly compile and build pdf from TeX sources (it's also possible to use pure command line or <a href="http://www.xm1math.net/texmaker/">TeXMaker</a> + installed LaTeX (e.g. <a href="http://miktex.org/">MiKTeX</a>)to achieve same functionality)</li>
+<li>The root folder of the publication contains the central LaTeX file with all 'includes' directives</li>
+</ul>
+<p>And in case you followed described about approach in wiring publications, you can afterwords merge the separated TeX files into a single one using following small python script <a href="https://github.com/vdmitriyev/pylatexmerger">pylatexmerger</a>. Basically, script automatically merges all separated part of your TeX publication in a single TeX file.</p>
+<p>I hope it will help you to avoid unnecessary "fights" with "formats" and "forms" while writing your next publication.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://vdmitriyev.github.io/blog/title-list-of-python-books-to-bring-your-python-skills-one-level-up.html" rel="bookmark"
+                           title="Permalink to Title: List of Python Books to Bring Your Python Skills One Level Up">Title: List of Python Books to Bring Your Python Skills One Level Up</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2015-03-06T00:00:00+01:00">
                 Published: March 2015
@@ -35,24 +89,11 @@
         </address>
 <p>In <a href="http://vdmitriyev.github.io/blog/category/all.html">All</a>. </p>
 <p>tags: <a href="http://vdmitriyev.github.io/blog/tag/books.html">books</a> <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> <a href="http://vdmitriyev.github.io/blog/tag/links.html">links</a> <a href="http://vdmitriyev.github.io/blog/tag/python.html">python</a> </p>
-</footer><!-- /.post-info --><p>I have an programming experience in various of languages, mainly from the mainstream category like C++, Java, C#, JavaScript, etc. . Despite having a really big variety of programming languages, sometimes you want to stick to particular one. For me it’s currently a <a href="https://www.python.org/">Python</a>.</p>
-<p>After I spent some time writing code in Python for various of tasks (data wrangling, statistical, machine learning, databases, etc.) I though that I need some sort of advanced or fundamental book (-s) that can help me to bring my Python skills one level up. And as I expected the job of figuring out the best suitable books for me had to be performed by my own. I even asked people on twitter with almost no <a href="https://twitter.com/vdmitriyev/status/573602586017800193">responses</a> (thanks to my fried Bota for giving me at least one book as a hint). I spent some time on the web (primary on reading amazon recommendations and deciding about trusting or not them) I formed following list of books for my own, but I thought that also can be handy for others:</p>
-<ul>
-<li><a href="http://www.qtrac.eu/pipbook.html">Python in Practice Create Better Programs Using Concurrency, Libraries, and Patterns</a> by Mark Summerfield</li>
-<li><a href="http://www.amazon.com/gp/reader/B00TKGY0GU/ref=sib_dp_kd#reader-link">Effective Python: 59 Specific Ways to Write Better Python</a></li>
-<li><a href="http://www.amazon.com/High-Performance-Python-Performant-Programming/dp/1449361595/">High Performance Python: Practical Performant Programming for Humans</a> by Micha Gorelick and Ian Ozsvald</li>
-<li><a href="http://www.amazon.com/Mastering-Object-oriented-Python-Steven-Lott/dp/1783280972/">Mastering Object-oriented Python by Steven F. Lott</a></li>
-</ul>
-<p>Of course there are other compilations of Python books existing. To list a few:</p>
-<ul>
-<li><a href="https://wiki.python.org/moin/AdvancedBooks">List of Advanced Python Book on python.org</a></li>
-<li><a href="http://www.quora.com/What-are-the-best-books-courses-for-learning-Python">What are the best books / courses for learning Python? at AMA service Quora</a></li>
-</ul>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>I have an programming experience in various of languages, mainly from the mainstream category like C++, Java, C#, JavaScript, etc. . Despite having a really big variety of programming languages, sometimes you want to stick to particular one. For me it’s currently a <a href="https://www.python.org/">Python</a>.</p>
+<p>After I spent some time writing ...</p>
+                <a class="readmore" href="http://vdmitriyev.github.io/blog/title-list-of-python-books-to-bring-your-python-skills-one-level-up.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

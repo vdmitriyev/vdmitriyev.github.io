@@ -24,7 +24,61 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/article-for-phd-students.html">Article for PhD Students</a></h1>
+                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/how-to-write-a-team-publication-in-latex-and-dont-get-mad.html">How to write a team publication in LaTeX and dont get mad</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-05-29T18:00:00+02:00">
+                Published: May 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
+        </address>
+<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
+<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> <a href="http://vdmitriyev.github.io/blog/tag/phd.html">phd</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/latex.html">latex</a> <a href="http://vdmitriyev.github.io/blog/tag/writing.html">writing</a> </p>
+</footer><!-- /.post-info --><p><img alt="Don't get mad, get motivated and use LaTeX" src="http://vdmitriyev.github.io/blog/images/random/dont-get-mad-use-latex.png" /></p>
+<p><center>
+<strong>Publishing is not a sprint to the finish line.</strong> </br>
+<strong>There is no finish line.</strong> </br>
+<strong>You just keep on running.</strong> </br>
+via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradElitism</a>
+</center></p>
+<p>A really huge amount of people around the glob use <a href="http://www.latex-project.org/">LaTeX</a> as a primary software tool (or you can say "package") for writing, formating or just maintaining their own texts. Especially, it's very popular word processing package in academia, at least at part that is related to the <a href="http://en.wikipedia.org/wiki/STEM_fields">STEM</a> ( <strong>S</strong>cience, <strong>T</strong>chnology, <strong>E</strong>ngineering, and <strong>M</strong>athematics).</p>
+<p>Usually, the scientific publications are done by some group of people, who are united by some common ideas or just by chance. Before starting process of writing, besides the general ideas and directions of a future publication, normally, the structure of a publication is identified. The early structure identification helps a lot in organizing a proper writing process. The structural organization usually goes beyond the conference (or any other targeted event) driven templates and suggesting and would include some details about the content itself and responsibilities of particular author.</p>
+<p>While writing a collaborative publication, one of the painful and never ending problem is an synchronization of changes. With time, the synchronization starts to be more painful. When the content of the paper is continuously improved by multiple authors. More and more variants (or branches) are created by authors. And the usage of the MS Word (despite it's really amazing, very robust, more than popular tool for creating texts and other types of information) adds a huge amount of overhead.</p>
+<p>In order to write a publication I usually try to organize the process in a following way:</p>
+<ul>
+<li>Separate content of the publication from it's processing part</li>
+<li>Make writing process transparent (host and share all the publication files through the dropbox)</li>
+<li>Organize versioning (default feature of documents hosting services like dropbox)</li>
+<li>Separate part of each author into different TeX files and include them with <em>\input{<PATH-TO-TeX>}</em> directive<ul>
+<li>Obviously, separating each author's part into separate file won't cause</li>
+</ul>
+</li>
+</ul>
+<p>The process of writing is quite simple - you need to write down what you would like to deliver. The tricky part, besides content, is that the LaTeX paper is "a priori" separated into smaller parts and for each part of the paper, the responsible author is assigned. The basic publication structure can be see in this <a href="https://github.com/vdmitriyev/pylatexmerger/tree/master/sample-paper">example publication</a>, it consists out of following folders:</p>
+<ul>
+<li>"abstract" folder contains abstract part of the publication;</li>
+<li>"authors" folder contains all authors listed with accordance to the conference (or other targeted event) template</li>
+<li>"bibliography" folder contains a bibtex formatted file with all cited works</li>
+<li>"models" folder contains the images, diagrams or other graphical resources used within the publication. The root of the folder usually contains the original sources, whether the sub-folder lik "png", contain a exported version of the object in particular format.</li>
+<li>"build-latex-win" folder contains bat files that are able to properly compile and build pdf from TeX sources (it's also possible to use pure command line or <a href="http://www.xm1math.net/texmaker/">TeXMaker</a> + installed LaTeX (e.g. <a href="http://miktex.org/">MiKTeX</a>)to achieve same functionality)</li>
+<li>The root folder of the publication contains the central LaTeX file with all 'includes' directives</li>
+</ul>
+<p>And in case you followed described about approach in wiring publications, you can afterwords merge the separated TeX files into a single one using following small python script <a href="https://github.com/vdmitriyev/pylatexmerger">pylatexmerger</a>. Basically, script automatically merges all separated part of your TeX publication in a single TeX file.</p>
+<p>I hope it will help you to avoid unnecessary "fights" with "formats" and "forms" while writing your next publication.</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://vdmitriyev.github.io/blog/article-for-phd-students.html" rel="bookmark"
+                           title="Permalink to Article for PhD Students">Article for PhD Students</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2015-01-28T11:40:00+01:00">
                 Published: January 2015
@@ -35,20 +89,11 @@
         </address>
 <p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
 <p>tags: <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> <a href="http://vdmitriyev.github.io/blog/tag/phd.html">phd</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/tips.html">tips</a> </p>
-</footer><!-- /.post-info --><p>As time of your master degree pass by, or any other "after big study activity", people stars to think about the future. And one of the possible "future step" that they consider as an important and very prominent one is doing PhD.</p>
-<p>This blog post offers the collection of the articles, which are worth reading, if you will start thinking about continuing your education as an PhD students somewhere in the world. Articles describe really good concepts behind the life of the PhD student. But before start reading them, be aware that most of them are focused on the Computer Science domain. Materials also can reviewed while your are in process of achieving your PhD degree of after you finally got it.</p>
-<p>Here is the collection of articles I just wrote above:</p>
-<ul>
-<li><a href="https://chroniclevitae.com/news/566-the-really-obvious-but-all-too-often-ignored-guide-to-getting-published">The Really Obvious (but All-Too-Often-Ignored) Guide to Getting Published</a></li>
-<li><a href="http://www.pgbovine.net/PhD-overview.htm">Overview of Science/Engineering Ph.D. Program Requirements</a></li>
-<li><a href="http://www.theguardian.com/higher-education-network/2014/nov/25/10-ways-to-make-the-most-of-your-time-as-a-phd-student">10 ways to make the most of your time as a PhD student</a></li>
-</ul>
-<p>I wish you nice defense at the end of you research journey. Try to have fun while you are working on you are trying to solve problems no one solved before.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p>As time of your master degree pass by, or any other "after big study activity", people stars to think about the future. And one of the possible "future step" that they consider as an important and very prominent one is doing PhD.</p>
+<p>This blog post offers the collection of the ...</p>
+                <a class="readmore" href="http://vdmitriyev.github.io/blog/article-for-phd-students.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

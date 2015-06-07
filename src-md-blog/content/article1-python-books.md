@@ -1,4 +1,4 @@
-Title: Title: List of Python Books to Bring Your Python Skills One Level Up
+Title: List of Python Books to Bring Your Python Skills One Level Up
 Date: 2015-03-06 00:00
 Tags: books, collection, links, python
 

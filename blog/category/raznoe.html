@@ -25,7 +25,37 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/how-to-export-ms-power-point-slides-to-the-pdf-file-and-keep-animations.html">How to export MS Power Point Slides to the PDF file and keep Animations</a></h1>
+                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/false-positive-in-real-life-wordpress-just-blocked-my-personal-blog.html">False Positive in Real Life - Wordpress Just Blocked My Personal Blog</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2015-06-11T01:00:00+02:00">
+                Published: June 2015
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
+        </address>
+<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
+<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/blog.html">blog</a> <a href="http://vdmitriyev.github.io/blog/tag/block.html">block</a> <a href="http://vdmitriyev.github.io/blog/tag/github.html">GitHub</a> <a href="http://vdmitriyev.github.io/blog/tag/fpr.html">FPR</a> <a href="http://vdmitriyev.github.io/blog/tag/ml.html">ML</a> </p>
+</footer><!-- /.post-info --><p>Hurra! I have one platform less to maintain!</p>
+<p>Very short story - for no reason wordpress.com blocked my personal blog, which they were hosting for free.</p>
+<p>It's nice that since long I moved everything to the github.com repository and started to support my personal blog mainly in markdown and exposing it via <a href="https://pages.github.com/">GitHub Pages</a> service. The decision was made after I spent a fair amount of time figuring out list of really demanding for me features on wordpress.com, which were not existing in free version or not existing at all.</p>
+<p>All I did in order to be blocked - I tried to synchronize my previously written post <a href="http://vdmitriyev.github.io/blog/how-to-export-ms-power-point-slides-to-the-pdf-file-and-keep-animations.html">How to export MS Power Point Slides to the PDF file and keep Animations</a> with my wordpress.com blog directly in markdown. And when I started to port another blog article, I figured out that I was blocked. Of course I tried to get in contact with wordpress.com via the form they offered me and report and error. However, I wasn't able to convince them that I'm not a bot, spamer or any other similar entity. One single credit that I would like to give them (besides the fact that they hosted my blog for free), that they really reacted very fast in answering my appeal. I hope that at least the human responded me, not a robot.</p>
+<p>Here is the part from their answer telling me what was wrong with the content I provided: <em>"the Content is not spam, and does not contain unethical or unwanted commercial content designed to drive traffic to third party sites or boost the search engine rankings of third party sites"</em>. The whole emails:</p>
+<p><img alt="False Positive in Real Life - Wordpress Just Blocked My Personal Blog" src="http://vdmitriyev.github.io/blog/images/random/FalsePositiveinRealLife.png" /></p>
+<p>P.S. <strong>Viva la GitHub!</strong></p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://vdmitriyev.github.io/blog/how-to-export-ms-power-point-slides-to-the-pdf-file-and-keep-animations.html" rel="bookmark"
+                           title="Permalink to How to export MS Power Point Slides to the PDF file and keep Animations">How to export MS Power Point Slides to the PDF file and keep Animations</a></h1>
+                </header>
+
+                <div class="entry-content">
 <footer class="post-info">
         <abbr class="published" title="2015-06-03T18:00:00+02:00">
                 Published: June 2015
@@ -36,39 +66,11 @@
         </address>
 <p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
 <p>tags: <a href="http://vdmitriyev.github.io/blog/tag/ppt.html">PPT</a> <a href="http://vdmitriyev.github.io/blog/tag/pdf.html">PDF</a> <a href="http://vdmitriyev.github.io/blog/tag/animations.html">animations</a> <a href="http://vdmitriyev.github.io/blog/tag/export.html">export</a> </p>
-</footer><!-- /.post-info --><p><img alt="From Animated PPT to Animated PDF" src="http://vdmitriyev.github.io/blog/images/random/PPT-to-PDFwith-Animations.png" /></p>
-<p>From time to time I need to present some content in-front of the audience, of course in form of the presentation with some slides helping me. Despite I'm not a huge fan of animations, they can be really helpful in delivering the ideas during a talk. Especially, animations within the presentations are extremely helpful when the content of the slide should be delivered step-by-step.</p>
-<p>It's not a secret that immediately after a talk, people who attended the talk, most likely are going to forget most of the content. As one of the possible solutions, the presenter can provide people with presentation by the end of it. And unusually, to be it more "interoperable" and "system independent" the format of the distribution should be PDF and not TeX or PPT.</p>
-<p>I my particular case, I need some solution to convert PPT presentations with animations into PDF. I started to search for a solution for the problem "How the MS Power Point (PPT or PPTX) slides can be exported to the PDF with animations", and found following solutions:</p>
-<ul>
-<li><a href="http://www.dia.uniroma3.it/~rimondin/downloads.php">PPspliT</a> is a PowerPoint add-in that splits animation effects into different slides</li>
-<li><a href="http://neilmitchell.blogspot.de/2007/11/creating-pdf-from-powerpoint-with.html">Neil Mitchell's VBA Script for PowerPoint -&gt; PDF (Part 1)</a></li>
-<li><a href="http://neilmitchell.blogspot.de/2007/11/powerpoint-pdf-part-2.html">Neil Mitchell's VBA Script for PowerPoint -&gt; PDF (Part 2)</a></li>
-</ul>
-<p>The solution with VBA scripts was the best suiting my needs. Here are the steps (I used 2013 version):</p>
-<ul>
-<li>Open your MS Power Point presentation and navigate to the "View" panel</li>
-<li>Click on Macros</li>
-<li>Within the Macros panel type some dummy name (like "test") and click on "Create"<ul>
-<li>The IDE (integrated development environment) Microsoft Visual Basic For Application will be opened</li>
-<li><strong>NOTE</strong> - there is also an alternative how to start IDE, use hot keys "Ctl + F11"</li>
-</ul>
-</li>
-<li>Within the opened IDE replace text with the code from <a href="http://neilmitchell.blogspot.de/2007/11/creating-pdf-from-powerpoint-with.html">here</a> and save it</li>
-<li>On the "Saving Dialog" windows click yes and close IDE</li>
-<li>Go to your opened Power Point presentation, click on "Macros" and run "AddElements"</li>
-<li>Now you can notice that the all original slides were "dimmed", and new slides were added. In newly created slides, the original slides with animations are duplicated.<ul>
-<li><strong>NOTE</strong> Even if the original elements within the MS Power Point presentation located in one single block are appeared one by one during the animation, after transformation to multiple slides with help of VBA script, the block with animations will appear only one as a whole, to overcome this issues, the elements that are animated should be separated into different blocks</li>
-</ul>
-</li>
-<li>Navigate to the "Save As" and select PDF as the target format, enjoy created PDF file!</li>
-</ul>
-<p>I hope it helped you as it helped me.</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
+</footer><!-- /.post-info -->                <p><img alt="From Animated PPT to Animated PDF" src="http://vdmitriyev.github.io/blog/images/random/PPT-to-PDFwith-Animations.png" /></p>
+<p>From time to time I need to present some content in-front of the audience, of course in form of the presentation with some slides helping me. Despite I'm not a huge fan of animations, they can be really helpful in delivering the ideas during a talk. Especially, animations within ...</p>
+                <a class="readmore" href="http://vdmitriyev.github.io/blog/how-to-export-ms-power-point-slides-to-the-pdf-file-and-keep-animations.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
 
             <li><article class="hentry">
                 <header>

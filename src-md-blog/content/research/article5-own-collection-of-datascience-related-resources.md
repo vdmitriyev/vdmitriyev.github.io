@@ -21,7 +21,7 @@ I'm subscribed to the following newsletters and I'm trying to dedicate 1-2 hours
 * [Python Weekly](http://www.pythonweekly.com/)
     - *A free weekly newsletter featuring curated news, articles, new releases, jobs etc related to Python.*
 * [The Yhat Blog](http://blog.yhathq.com/)
-    - *The Yhat Blog - machine learning, data science, engineering*
+    - *The Yhat Blog is mainly about machine learning, data science, engineering, DevOps etc.*
 
 In case you are traveling a lot, listening to podcasts can be really grate time saver for you. Here is my collection of podcasts I'm usually paying my attention to:
 

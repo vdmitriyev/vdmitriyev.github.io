@@ -1,6 +1,6 @@
 Title: Collection of Resource for Searching Scientific Publications
 Date: 2015-01-26 15:20
-Tags: computer science, publication
+Tags: computer science, publication, research
 
 ### About
 
@@ -24,7 +24,7 @@ Collection of the online resources and some other additional tricks for searchin
     - One of the largest online library with a lot of publications
 * [http://www.informatik.uni-trier.de/~ley/](http://www.informatik.uni-trier.de/~ley/)
     - The DBLP Computer Science Bibliography is very popular among the researches and conferences holders int the **Computer Science** as an library for hosting "post-conferences" publication online
-    
+
 ### Other Tricks
 
 * In the twitter you can you the following hashtag to get closed publication **#icanhazpdf**

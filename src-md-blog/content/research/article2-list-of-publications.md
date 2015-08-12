@@ -1,6 +1,6 @@
 Title: Collection of Resource for Searching Scientific Publications
 Date: 2015-01-26 15:20
-Tags: computer science, publication, research
+Tags: computer science, publication, research, collection
 
 ### About
 

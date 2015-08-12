@@ -4,7 +4,7 @@ Tags: computer science, publication, research
 
 ### About
 
-Collection of the online resources and some other additional tricks for searching research publication on the web.
+Collection of an online resources with other additional tricks for searching scientific/research publication.
 
 ### Collection of Resource for Searching Scientific Publications
 
@@ -25,6 +25,8 @@ Collection of the online resources and some other additional tricks for searchin
 * [http://www.informatik.uni-trier.de/~ley/](http://www.informatik.uni-trier.de/~ley/)
     - The DBLP Computer Science Bibliography is very popular among the researches and conferences holders int the **Computer Science** as an library for hosting "post-conferences" publication online
 
+**N.B.:** For sure there are far more online libraries and search engines available. For instance, another list of libraries and search engines available for Computer Science in Germany can be found [here](http://rzblx10.uni-regensburg.de/dbinfo/dbliste.php?bib_id=ubol&colors=7&ocolors=40&lett=f&gebiete=30). You can change your domain of interests.
+
 ### Other Tricks
 
 * In the twitter you can you the following hashtag to get closed publication **#icanhazpdf**
@@ -34,6 +36,6 @@ Collection of the online resources and some other additional tricks for searchin
     - More info [here](https://twitter.com/p_gl/status/534727515785691136)
 * Search [ResearchGate](http://www.researchgate.net/) and ask author directly
 
-### Misc
+### Miscellaneous
 
 Collection of the different conferences sorted in some reputation order (h5-index) can be found [here](https://scholar.google.com/citations?view_op=top_venues&amp;hl=en&amp;vq=eng_databasesinformationsystems)

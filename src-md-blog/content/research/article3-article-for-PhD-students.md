@@ -13,3 +13,10 @@ Here is the collection of articles I just wrote above:
 * [10 ways to make the most of your time as a PhD student](http://www.theguardian.com/higher-education-network/2014/nov/25/10-ways-to-make-the-most-of-your-time-as-a-phd-student)
 
 I wish you nice defense at the end of you research journey. Try to have fun while you are working on you are trying to solve problems no one solved before.
+
+Some additional interesting about PhD experience (added on 17.09.2015)
+
+* [So You Want to do a PhD? – Your Survival Guide (Part I)](http://aspiringprofessionalshub.com/2015/06/04/so-you-want-to-do-a-phd-your-survival-guidepart-1/)
+* [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/)
+* [5 secrets to surviving (and thriving in) a PhD program](http://www.elsevier.com/connect/5-secrets-to-surviving-and-progressing-in-a-phd-program)
+* [10 ways to make your PhD experience easier and more enjoyable](http://www.elsevier.com/connect/10-ways-to-make-your-phd-experience-easier-and-more-enjoyable)

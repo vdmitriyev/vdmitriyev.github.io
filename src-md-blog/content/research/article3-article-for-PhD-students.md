@@ -16,6 +16,7 @@ Additional articles related to PhD experience (added on 17.09.2015):
 
 
 * [5 secrets to surviving (and thriving in) a PhD program](http://www.elsevier.com/connect/5-secrets-to-surviving-and-progressing-in-a-phd-program)
+    - Drops a light on topics which should be really taken into consideration during PhD study. Describes in a really good way how to distinguish between various dissertation forms and formats.
 * [10 ways to make your PhD experience easier and more enjoyable](http://www.elsevier.com/connect/10-ways-to-make-your-phd-experience-easier-and-more-enjoyable)
     - Notes of a PhD students who stays close to practice problems and offers suitable at least for him solutions. Most of the solutions are not 'holy Grail' and silver bullet for anyone to use, but they sound very logical and I came to the same solutions independently and tried them on my own
 * [So You Want to do a PhD? – Your Survival Guide (Part I)](http://aspiringprofessionalshub.com/2015/06/04/so-you-want-to-do-a-phd-your-survival-guidepart-1/)

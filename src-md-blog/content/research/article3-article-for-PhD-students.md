@@ -14,10 +14,14 @@ Here is the collection of articles I just wrote above:
 
 Additional articles related to PhD experience (added on 17.09.2015):
 
-* [So You Want to do a PhD? – Your Survival Guide (Part I)](http://aspiringprofessionalshub.com/2015/06/04/so-you-want-to-do-a-phd-your-survival-guidepart-1/)
-* [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/)
+
 * [5 secrets to surviving (and thriving in) a PhD program](http://www.elsevier.com/connect/5-secrets-to-surviving-and-progressing-in-a-phd-program)
 * [10 ways to make your PhD experience easier and more enjoyable](http://www.elsevier.com/connect/10-ways-to-make-your-phd-experience-easier-and-more-enjoyable)
+    - Notes of a PhD students who stays close to practice problems and offers suitable at least for him solutions. Most of the solutions are not 'holy Grail' and silver bullet for anyone to use, but they sound very logical and I came to the same solutions independently and tried them on my own
+* [So You Want to do a PhD? – Your Survival Guide (Part I)](http://aspiringprofessionalshub.com/2015/06/04/so-you-want-to-do-a-phd-your-survival-guidepart-1/)
+    - This article is more or less about 'philosophical' part of PhD journey
+* [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/)
+    - This article contains description of concrete problems faced during and after PhD and offers solutions to them
 
 
 Wish you smooth defense at the end of you research journey. And try to have fun while you are working on problems no one solved before.

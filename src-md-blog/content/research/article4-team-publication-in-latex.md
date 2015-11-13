@@ -1,4 +1,4 @@
-Title: How to write a team publication in LaTeX and dont get mad
+Title: How to Write a Team Publication in LaTeX and Dont Get Mad
 Date: 2015-05-29 18:00
 Tags: collection, phd, research, latex, writing
 
@@ -25,7 +25,7 @@ In order to write a publication I usually try to organize the process in a follo
 * Separate part of each author into different TeX files and include them with *\input{<PATH-TO-TeX>}* directive
 	- Obviously, separating each author's part into separate file won't cause
 
-The process of writing is quite simple - you need to write down what you would like to deliver. The tricky part, besides content, is that the LaTeX paper is "a priori" separated into smaller parts and for each part of the paper, the responsible author is assigned. The basic publication structure can be see in this [example publication](https://github.com/vdmitriyev/pylatexmerger/tree/master/sample-paper), it consists out of following folders:
+The process of writing is quite simple - you need to write down what you would like to deliver. The tricky part, besides content, is that the LaTeX paper is "a priori" separated into smaller parts. And it chunked in a way that for each particular part of the paper will be one responsible author. The basic publication structure can be see in this [example publication](https://github.com/vdmitriyev/pylatexmerger/tree/master/sample-paper), it consists out of following folders:
 
 * "abstract" folder contains abstract part of the publication;
 * "authors" folder contains all authors listed with accordance to the conference (or other targeted event) template
@@ -34,6 +34,6 @@ The process of writing is quite simple - you need to write down what you would l
 * "build-latex-win" folder contains bat files that are able to properly compile and build pdf from TeX sources (it's also possible to use pure command line or [TeXMaker](http://www.xm1math.net/texmaker/) + installed LaTeX (e.g. [MiKTeX](http://miktex.org/))to achieve same functionality)
 * The root folder of the publication contains the central LaTeX file with all 'includes' directives
 
-And in case you followed described about approach in wiring publications, you can afterwords merge the separated TeX files into a single one using following small python script [pylatexmerger](https://github.com/vdmitriyev/pylatexmerger). Basically, script automatically merges all separated part of your TeX publication in a single TeX file.
+And in case you followed described about approach in wiring publications, you can afterwards merge separated TeX files into a single file using following python script [pylatexmerger](https://github.com/vdmitriyev/pylatexmerger). Basically, given script automatically merges all separated part of your TeX publication into a single TeX file and also tries to generate bat files for further compilation.
 
 I hope it will help you to avoid unnecessary "fights" with "formats" and "forms" while writing your next publication.

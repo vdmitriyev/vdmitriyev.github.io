@@ -25,7 +25,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/how-to-write-a-team-publication-in-latex-and-dont-get-mad.html">How to write a team publication in LaTeX and dont get mad</a></h1>
+                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/how-to-write-a-team-publication-in-latex-and-dont-get-mad.html">How to Write a Team Publication in LaTeX and Dont Get Mad</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2015-05-29T18:00:00+02:00">
                 Published: May 2015
@@ -56,7 +56,7 @@ via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradEli
 </ul>
 </li>
 </ul>
-<p>The process of writing is quite simple - you need to write down what you would like to deliver. The tricky part, besides content, is that the LaTeX paper is "a priori" separated into smaller parts and for each part of the paper, the responsible author is assigned. The basic publication structure can be see in this <a href="https://github.com/vdmitriyev/pylatexmerger/tree/master/sample-paper">example publication</a>, it consists out of following folders:</p>
+<p>The process of writing is quite simple - you need to write down what you would like to deliver. The tricky part, besides content, is that the LaTeX paper is "a priori" separated into smaller parts. And it chunked in a way that for each particular part of the paper will be one responsible author. The basic publication structure can be see in this <a href="https://github.com/vdmitriyev/pylatexmerger/tree/master/sample-paper">example publication</a>, it consists out of following folders:</p>
 <ul>
 <li>"abstract" folder contains abstract part of the publication;</li>
 <li>"authors" folder contains all authors listed with accordance to the conference (or other targeted event) template</li>
@@ -65,7 +65,7 @@ via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradEli
 <li>"build-latex-win" folder contains bat files that are able to properly compile and build pdf from TeX sources (it's also possible to use pure command line or <a href="http://www.xm1math.net/texmaker/">TeXMaker</a> + installed LaTeX (e.g. <a href="http://miktex.org/">MiKTeX</a>)to achieve same functionality)</li>
 <li>The root folder of the publication contains the central LaTeX file with all 'includes' directives</li>
 </ul>
-<p>And in case you followed described about approach in wiring publications, you can afterwords merge the separated TeX files into a single one using following small python script <a href="https://github.com/vdmitriyev/pylatexmerger">pylatexmerger</a>. Basically, script automatically merges all separated part of your TeX publication in a single TeX file.</p>
+<p>And in case you followed described about approach in wiring publications, you can afterwards merge separated TeX files into a single file using following python script <a href="https://github.com/vdmitriyev/pylatexmerger">pylatexmerger</a>. Basically, given script automatically merges all separated part of your TeX publication into a single TeX file and also tries to generate bat files for further compilation.</p>
 <p>I hope it will help you to avoid unnecessary "fights" with "formats" and "forms" while writing your next publication.</p>                </article>
             </aside><!-- /#featured -->
         <section id="extras" class="body">

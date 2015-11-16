@@ -9,7 +9,7 @@ Primary, author giving 7 suggestions about writing a great research paper.
 
 **1. Don’t wait: write**
 
-Different models of writing research paper exists. One of the most command one is **Idea -> Research ->  Write Paper**. Instead of model mentioned, the following one is more appropriate **Idea -> Write Paper -> Research**. Because writing papers is a primary mechanisms for doing research (not just for reporting it). Try to put any idea on the paper (take a note) and if it’s possible – discuss or present it to other people.
+Different models of writing research paper exists. One of the most command one is **Idea -> Research ->  Write Paper**. Instead of model mentioned, the following one is more appropriate **Idea -> Write Paper -> Research**. Because writing papers is a primary mechanisms for doing research (not just for reporting it). Try to put any idea on the paper (take a note) and if its' possible - discuss or present it to other people.
 
 **2. Identify your key idea**
 
@@ -17,7 +17,7 @@ The paper is a mechanism of conveying your idea from your head to other heads, n
 
 **3. Tell a story**
 
-Imagine yourself explaining your work in front of the whiteboard. Narrative flow: (a) Here is the problem; (b) It’s an interesting problem; (c) It’s an unsolved problem; (d) Here is my idea; (e) My idea works (details, data); (f) Compare to other people’s approaches. State your contribution and refer to the work done.
+Imagine yourself explaining your work in front of the white board. Narrative flow: (a) Here is the problem; (b) It’s an interesting problem; (c) It’s an unsolved problem; (d) Here is my idea; (e) My idea works (details, data); (f) Compare to other people's approaches. State your contribution and refer to the work done.
 
 Avoid using following phrase that usually exists in most papers (however, no one is reading it)  “paper is structured as follows …“. Instead, use forward references from the narrative in the introduction section.
 

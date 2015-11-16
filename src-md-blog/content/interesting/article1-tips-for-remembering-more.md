@@ -21,7 +21,7 @@ Tags: howtos, improve, learn, memory
 4. Interpret it by multiple approach **[think] [write] [draw] [discuss] [sing] [watch] [listen] [act] [visualize] [use-analogy]**
 
 ***Above mentioned techniques are not for the long-term memory.
-For the "LTM" they should be combined with other "continuosuly repeating" techniques***
+For the "LTM" they should be combined with other "continuously repeating" techniques***
 
 </br>
 

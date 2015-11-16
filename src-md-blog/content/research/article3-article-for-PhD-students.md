@@ -6,7 +6,7 @@ As time of your master degree pass by, or any other "after big study activity",
 
 This blog post offers the collection of the articles, which are worth reading, if you will start thinking about continuing your education as an PhD students somewhere in the world. Articles describe really good concepts behind the life of the PhD student. But before start reading them, be aware that most of them are focused on the Computer Science domain. Materials also can reviewed while your are in process of achieving your PhD degree of after you finally got it.
 
-Here is the collection of articles I just wrote above:
+Here is the collection of articles I just wrote above:
 
 * [The Really Obvious (but All-Too-Often-Ignored) Guide to Getting Published](https://chroniclevitae.com/news/566-the-really-obvious-but-all-too-often-ignored-guide-to-getting-published)
 * [Overview of Science/Engineering Ph.D. Program Requirements](http://www.pgbovine.net/PhD-overview.htm)

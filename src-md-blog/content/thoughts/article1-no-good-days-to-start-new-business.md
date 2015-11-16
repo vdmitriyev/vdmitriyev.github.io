@@ -8,6 +8,4 @@ It’s never the right day to start something new. In this sense, any kind of bu
 
 The reason in starting writing in English is simple as a day – progress. In order to enhance any of his own abilities, statistically average human must practice it regularly, that’s it. No more secrets.
 
-—-
-
 Finally, after trying couple or tricks on this blog, almost all simple functionality started to work properly.

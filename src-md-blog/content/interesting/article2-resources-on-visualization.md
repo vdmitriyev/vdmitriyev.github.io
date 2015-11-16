@@ -1,6 +1,6 @@
 Title: Worth Checking Resources On Visualization
 Date: 2015-02-06 15:10
-Tags: links, materials, visualisation
+Tags: links, materials, visualization
 
 Collection of the resources about the generic visualization techniques, examples, tools that I personally like and found worth checking and seeing at least once.
 
@@ -8,7 +8,7 @@ Collection of the resources about the generic visualization techniques, examples
 
 ## Visualization techniques and best practices
 
-* **The Data Visualization Catalogue**
+* **The Data Visualization Catalog**
     - [http://www.datavizcatalogue.com/index.html](http://www.datavizcatalogue.com/index.html)
 * **A Periodic Table of Visualization Methods**
     - [http://www.visual-literacy.org/periodic_table/periodic_table.html](http://www.visual-literacy.org/periodic_table/periodic_table.html)
@@ -35,7 +35,7 @@ Collection of the resources about the generic visualization techniques, examples
 
 <br />
 
-## Tools for the visualization
+## Tools for visualization
 
 * **FnordMetric, from SQL to SVG**
     - [http://fnordmetric.io/examples/](http://fnordmetric.io/examples/)

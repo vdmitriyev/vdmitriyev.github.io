@@ -8,6 +8,8 @@ Data and software tools were always "game drivers" in academia and industry. For
 
 However, as long and tools and datasets are getting more and more.
 
+Technically spoken, integration of "custom" fields into BibTeX is already happening. For instance, very popular bibliography managers such as [Mendeley](https://www.mendeley.com/) and [Zotero](https://www.zotero.org/) while exporting BibTeX-es in parallel embedding additional fields into exported file. Example of such field is "file" fields that helps aforementioned tools to maintain their libraries, it basically contains full (or relative) path to the scientific manuscript, which is usually pdf file.
+
 **Write**
 
 Introduce two additional optional fields for the BibTeX format. New fields will allow

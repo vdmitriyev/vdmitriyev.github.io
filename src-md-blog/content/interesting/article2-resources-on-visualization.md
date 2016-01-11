@@ -41,3 +41,6 @@ Collection of the resources about the generic visualization techniques, examples
     - [http://fnordmetric.io/examples/](http://fnordmetric.io/examples/)
 
 
+UPD (11.01.2016):
+
+[Big Data Visualization: Review of the 20 Best Tools](http://inspire.blufra.me/big-data-visualization-review-of-the-20-best-tools/) many thanks to [Edoardo L'Astorina](https://www.linkedin.com/in/eddyinblu) for sharing this interesting review with me.

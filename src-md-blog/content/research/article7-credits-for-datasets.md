@@ -1,5 +1,5 @@
 Title: How to Motivate People in Creating, Maintaining Datasets
-Date: 2015-11-17 21:00
+Date: 2016-02-29 16:00
 Tags: TeX, BibTeX, credits, research, datasets
 
 ![BibTeX]({filename}../images/random/bibtex.png)
@@ -10,9 +10,7 @@ However, as long and tools and datasets are getting more and more.
 
 Technically spoken, integration of "custom" fields into BibTeX is already happening. For instance, very popular bibliography managers such as [Mendeley](https://www.mendeley.com/) and [Zotero](https://www.zotero.org/) while exporting BibTeX-es in parallel embedding additional fields into exported file. Example of such field is "file" fields that helps aforementioned tools to maintain their libraries, it basically contains full (or relative) path to the scientific manuscript, which is usually pdf file.
 
-**Write**
-
-Introduce two additional optional fields for the BibTeX format. New fields will allow
+And very big question - should a community introduce additional optional fields within the BibTeX format in order to motivate people for creating publicly accessible datasets that could be easily cited in scientific manuscripts?
 
 
 Nice description of the BibTeX format can be found [here](https://www.cs.arizona.edu/~collberg/Teaching/07.231/BibTeX/bibtex.html), [here](http://www.openoffice.org/bibliographic/bibtex-format.pdf) or [here](http://bibtexml.sourceforge.net/btxdoc.pdf).

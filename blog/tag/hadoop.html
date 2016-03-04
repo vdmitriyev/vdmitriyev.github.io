@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Yet Another Blog (YAB) - hadoop</title>
+        <link rel="stylesheet" href="http://vdmitriyev.github.io/blog/theme/css/main.css" />
+        <link href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yet Another Blog (YAB) Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://vdmitriyev.github.io/blog/">Yet Another Blog (YAB) </a></h1>
+                <nav><ul>
+                    <li><a href="http://vdmitriyev.github.io/blog">Main</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/interesting.html">Interesting</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/research.html">Research</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/thoughts.html">Thoughts</a></li>
+                    <li><a href="http://vdmitriyev.github.io/blog/category/raznoe.html">Разное</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/hadoop-streaming-and-xml.html">Hadoop Streaming and XML</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2016-03-03T18:00:00+01:00">
+                Published: March 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
+        </address>
+<p>In <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a>. </p>
+<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/hadoop.html">hadoop</a> <a href="http://vdmitriyev.github.io/blog/tag/streaming.html">streaming</a> <a href="http://vdmitriyev.github.io/blog/tag/xml.html">xml</a> <a href="http://vdmitriyev.github.io/blog/tag/bigdata.html">bigdata</a> </p>
+</footer><!-- /.post-info --><h2>About</h2>
+<p>The general idea behind current post is to show how parsing of single XML file with Python script could be implemented with Hadoop Streaming.</p>
+<p>Trying <a href="https://hadoop.apache.org/docs/r1.2.1/streaming.html#Hadoop+Streaming">Hadoop Streaming</a> on Hortonworks Virtual Machine (VM) image (HDP version is 2.3.1). For streaming XML use following <a href="http://www.science.smith.edu/dftwiki/index.php/Hadoop_Tutorial_2.1_--_Streaming_XML_Files">Hadoop Tutorial 2.1 -- Streaming XML Files</a> article. All discussed Python scripts and XML data samples can be found at the end of current document in <strong>Scripts and Files</strong> section.</p>
+<h3>Loading Data</h3>
+<p>Loading data (don't forget to copy that to Hadoop machine locally). If you are running your virtual machine on Windows host than propably you will find <a href="https://winscp.net/eng/download.php">WinSCP</a> useful.</p>
+<div class="highlight"><pre><span></span>hdfs dfs -mkdir /data/xml/inputs/
+hdfs dfs -put /root/streaming/samplexml01.xml /data/xml/inputs/
+</pre></div>
+
+
+<p>Don't forget to copy Python scripts used within map-reduce phases on VM machine (where all commands are executed).</p>
+<h3>Prerequisites (CentOS)</h3>
+<p>You will need to use <code>dos2unix</code> utility on your Hortonworks VM only in case your host machine is Windows.</p>
+<div class="highlight"><pre><span></span>yum install dos2unix
+</pre></div>
+
+
+<h3>Simple Option with XML</h3>
+<p>Note Hadoop location for Hortonworks image is <code>/usr/hdp/current</code>.
+Try simplest option of streaming with default linux commands.</p>
+<div class="highlight"><pre><span></span>hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar <span class="se">\</span>
+    -input /data/xml/inputs/ <span class="se">\</span>
+    -output /data/xml/outputs/01/ <span class="se">\</span>
+    -mapper /bin/cat <span class="se">\</span>
+    -reducer /usr/bin/wc
+</pre></div>
+
+
+<p>Try simplest option of streaming with default linux commands and XML reader. Don't forget to remove previous output from HDFS, otherwise the MapReduce will thrown exception during execution (it cannot write it's output into existing directory).</p>
+<div class="highlight"><pre><span></span>hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar <span class="se">\</span>
+    -inputreader <span class="s2">&quot;StreamXmlRecordReader,begin=xmlroot,end=/xmlroot&quot;</span> <span class="se">\</span>
+    -input /data/xml/inputs/ <span class="se">\</span>
+    -output /data/xml/outputs/02/ <span class="se">\</span>
+    -mapper /bin/cat <span class="se">\</span>
+    -reducer /usr/bin/wc
+</pre></div>
+
+
+<p>Please note that the common problem for errors is that Hadoop is not running streaming when output folder exists.</p>
+<h3>Python and XML</h3>
+<p>Preparing Python scripts. Note that it other to make Python work on linux from command line directly (without explicitly calling <code>python</code> you need to use proper headline as the first line of your Python script).</p>
+<div class="highlight"><pre><span></span>chmod a+x ./mapper.py
+chmod a+x ./reducer.py
+</pre></div>
+
+
+<p>In case your host system is Windows and guest is Linux, you need to convert between Windows and Linux file formats.</p>
+<div class="highlight"><pre><span></span>dos2unix mapper.py
+dos2unix reducer.py
+</pre></div>
+
+
+<p>Local testing facilities... Running simple testing locally, which will allows you to test your script without "heavy" MapReduce.</p>
+<div class="highlight"><pre><span></span>cat samplexml01.xml <span class="p">|</span> ./mapper.py <span class="p">|</span> ./reducer.py
+</pre></div>
+
+
+<h3>Hadoop Cluster, Python and XML</h3>
+<p>Run Python scripts inside Hadoop cluster.</p>
+<div class="highlight"><pre><span></span>hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar <span class="se">\</span>
+    -input /data/xml/inputs/ <span class="se">\</span>
+    -output /data/xml/outputs/04/ <span class="se">\</span>
+    -file mapper.py <span class="se">\</span>
+    -file reducer.py <span class="se">\</span>
+    -mapper ./mapper.py <span class="se">\</span>
+    -reducer ./reducer.py
+</pre></div>
+
+
+<h3>Monitoring Resources of the Hortonworks VM</h3>
+<ul>
+<li><a href="http://localhost:8088/cluster">http://localhost:8088/cluster</a></li>
+<li><a href="http://localhost:50070/dfshealth.html#tab-overview">http://localhost:50070/dfshealth.html#tab-overview</a></li>
+<li><a href="http://localhost:8000/filebrowser/view/data/xml/outputs">http://localhost:8000/filebrowser/view/data/xml/outputs</a></li>
+<li><a href="http://localhost:8080/#/main/dashboard/metrics">http://localhost:8080/#/main/dashboard/metrics</a></li>
+</ul>
+<p></br></p>
+<h2>Scripts and Files</h2>
+<p>Simpler mapper (version 1)</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">defaultdict</span>
+
+<span class="c1"># some constants for local debugging</span>
+<span class="n">_input_file</span> <span class="o">=</span> <span class="s1">&#39;input.txt&#39;</span>
+<span class="n">_output_file</span> <span class="o">=</span> <span class="s1">&#39;output.txt&#39;</span>
+
+<span class="k">def</span> <span class="nf">_mapper</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Mapper that iterates through particular tags of XML file.&quot;&quot;&quot;</span>
+
+    <span class="n">inText</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">currentTag</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ticketsection&#39;</span><span class="p">]</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span> <span class="s1">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">tag</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="c1">#print &#39;[i] start copying&#39;</span>
+                <span class="n">inText</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="n">currentTag</span> <span class="o">=</span> <span class="n">tag</span>
+
+            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;/&#39;</span> <span class="o">+</span> <span class="n">tag</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+                <span class="c1">#print &#39;[i] stop copying&#39;</span>
+                <span class="n">inText</span> <span class="o">=</span> <span class="bp">False</span>
+                <span class="n">currentTag</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="k">if</span> <span class="n">inText</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">currentTag</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">from_file</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Running scripts methods &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">from_file</span><span class="p">):</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_input_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+
+    <span class="n">_mapper</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1">#run(True)</span>
+    <span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<p>Simpler reducer</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">defaultdict</span>
+
+<span class="c1"># some constants for local debugging</span>
+<span class="n">_input_file</span> <span class="o">=</span> <span class="s1">&#39;input.txt&#39;</span>
+<span class="n">_output_file</span> <span class="o">=</span> <span class="s1">&#39;output.txt&#39;</span>
+
+<span class="k">def</span> <span class="nf">_reducer</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Reducer that iterates through provided input and just prints it.&quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">tag</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{0}:</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">from_file</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Running scripts methods &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">from_file</span><span class="p">):</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_input_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+
+    <span class="n">_reducer</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1">#run(True)</span>
+    <span class="n">run</span><span class="p">()</span>
+</pre></div>
+
+
+<p>File samplexml01.xml to be used by scripts</p>
+<div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
+<span class="nt">&lt;xmlroot</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+ <span class="nt">&lt;pather</span> <span class="na">guid=</span><span class="s">&quot;00011a0330-432432-4324-434324-4324353245sfds&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;ticketsection&gt;</span>
+       <span class="nt">&lt;attribute</span> <span class="na">value=</span><span class="s">&quot;EN&quot;</span> <span class="na">name=</span><span class="s">&quot;DefaultLanguage&quot;</span><span class="nt">/&gt;</span>
+       <span class="nt">&lt;attribute</span> <span class="na">value=</span><span class="s">&quot;New Value&quot;</span> <span class="na">name=</span><span class="s">&quot;SomeValues&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;/ticketsection&gt;</span>
+  <span class="nt">&lt;/pather&gt;</span>
+<span class="nt">&lt;/xmlroot&gt;</span>
+</pre></div>
+
+
+<p>Simpler mapper (version 2)</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="kn">import</span> <span class="n">ElementTree</span>
+
+<span class="kn">import</span> <span class="nn">uuid</span>  <span class="c1"># added</span>
+
+<span class="c1"># some constants for local debugging</span>
+<span class="n">_input_file</span> <span class="o">=</span> <span class="s1">&#39;input.txt&#39;</span>
+<span class="n">_output_file</span> <span class="o">=</span> <span class="s1">&#39;output.txt&#39;</span>
+
+<span class="k">def</span> <span class="nf">_mapper</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot; Mapper that reads whole XML file and sends it to Reducer.&quot;&quot;&quot;</span>
+
+    <span class="n">xml</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="n">unique_key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">get_hex</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">xml</span> <span class="o">+=</span> <span class="n">line</span> <span class="c1">#+ &#39;\n&#39;</span>
+
+    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unique_key</span><span class="p">,</span> <span class="n">xml</span><span class="p">))</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">root</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unique_key</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">root</span><span class="p">)))</span>
+    <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span><span class="n">ex</span><span class="p">:</span>
+        <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">[e]{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unique_key</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)))</span>
+
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">from_file</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; Running scripts methods &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">from_file</span><span class="p">):</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_input_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+
+    <span class="n">_mapper</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="c1">#run(True)</span>
+    <span class="n">run</span><span class="p">()</span>
+</pre></div>                </article>
+            </aside><!-- /#featured -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="https://twitter.com/vdmitriyev">Twitter</a></li>
+                            <li><a href="https://vdmitriyev.wordpress.com/">Wordpress</a></li>
+                            <li><a href="http://dmitriyev.tumblr.com/">Tumblr</a></li>
+                            <li><a href="https://github.com/vdmitriyev">GitHub</a></li>
+                            <li><a href="http://www.researchgate.net/profile/Viktor_Dmitriyev">ResearchGate</a></li>
+                            <li><a href="http://orcid.org/0000-0001-5661-4587">Orcid</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-59176821-3']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</body>
+</html>

@@ -1,5 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Yet Another Blog (YAB)</title><link href="http://vdmitriyev.github.io/blog/" rel="alternate"></link><link href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>http://vdmitriyev.github.io/blog/</id><updated>2016-02-29T16:00:00+01:00</updated><entry><title>How to Motivate People in Creating, Maintaining Datasets</title><link href="http://vdmitriyev.github.io/blog/how-to-motivate-people-in-creating-maintaining-datasets.html" rel="alternate"></link><updated>2016-02-29T16:00:00+01:00</updated><author><name>Viktor Dmitriyev</name></author><id>tag:vdmitriyev.github.io,2016-02-29:blog/how-to-motivate-people-in-creating-maintaining-datasets.html</id><summary type="html">&lt;p&gt;&lt;img alt="BibTeX" src="http://vdmitriyev.github.io/blog/images/random/bibtex.png" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Yet Another Blog (YAB)</title><link href="http://vdmitriyev.github.io/blog/" rel="alternate"></link><link href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>http://vdmitriyev.github.io/blog/</id><updated>2016-03-03T18:00:00+01:00</updated><entry><title>Hadoop Streaming and XML</title><link href="http://vdmitriyev.github.io/blog/hadoop-streaming-and-xml.html" rel="alternate"></link><updated>2016-03-03T18:00:00+01:00</updated><author><name>Viktor Dmitriyev</name></author><id>tag:vdmitriyev.github.io,2016-03-03:blog/hadoop-streaming-and-xml.html</id><summary type="html">&lt;h2&gt;About&lt;/h2&gt;
+&lt;p&gt;The general idea behind current post is to show how parsing of single XML file with Python script could be implemented with Hadoop Streaming.&lt;/p&gt;
+&lt;p&gt;Trying &lt;a href="https://hadoop.apache.org/docs/r1.2.1/streaming.html#Hadoop+Streaming"&gt;Hadoop Streaming&lt;/a&gt; on Hortonworks Virtual Machine (VM) image (HDP version is 2.3.1). For streaming XML use following &lt;a href="http://www.science.smith.edu/dftwiki/index.php/Hadoop_Tutorial_2.1_--_Streaming_XML_Files"&gt;Hadoop Tutorial 2.1 -- Streaming XML Files&lt;/a&gt; article. All discussed Python scripts and XML data samples can be found at the end of current document in &lt;strong&gt;Scripts and Files&lt;/strong&gt; section.&lt;/p&gt;
+&lt;h3&gt;Loading Data&lt;/h3&gt;
+&lt;p&gt;Loading data (don't forget to copy that to Hadoop machine locally). If you are running your virtual machine on Windows host than propably you will find &lt;a href="https://winscp.net/eng/download.php"&gt;WinSCP&lt;/a&gt; useful.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hdfs dfs -mkdir /data/xml/inputs/
+hdfs dfs -put /root/streaming/samplexml01.xml /data/xml/inputs/
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Don't forget to copy Python scripts used within map-reduce phases on VM machine (where all commands are executed).&lt;/p&gt;
+&lt;h3&gt;Prerequisites (CentOS)&lt;/h3&gt;
+&lt;p&gt;You will need to use &lt;code&gt;dos2unix&lt;/code&gt; utility on your Hortonworks VM only in case your host machine is Windows.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;yum install dos2unix
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Simple Option with XML&lt;/h3&gt;
+&lt;p&gt;Note Hadoop location for Hortonworks image is &lt;code&gt;/usr/hdp/current&lt;/code&gt;.
+Try simplest option of streaming with default linux commands.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar &lt;span class="se"&gt;\&lt;/span&gt;
+    -input /data/xml/inputs/ &lt;span class="se"&gt;\&lt;/span&gt;
+    -output /data/xml/outputs/01/ &lt;span class="se"&gt;\&lt;/span&gt;
+    -mapper /bin/cat &lt;span class="se"&gt;\&lt;/span&gt;
+    -reducer /usr/bin/wc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Try simplest option of streaming with default linux commands and XML reader. Don't forget to remove previous output from HDFS, otherwise the MapReduce will thrown exception during execution (it cannot write it's output into existing directory).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar &lt;span class="se"&gt;\&lt;/span&gt;
+    -inputreader &lt;span class="s2"&gt;&amp;quot;StreamXmlRecordReader,begin=xmlroot,end=/xmlroot&amp;quot;&lt;/span&gt; &lt;span class="se"&gt;\&lt;/span&gt;
+    -input /data/xml/inputs/ &lt;span class="se"&gt;\&lt;/span&gt;
+    -output /data/xml/outputs/02/ &lt;span class="se"&gt;\&lt;/span&gt;
+    -mapper /bin/cat &lt;span class="se"&gt;\&lt;/span&gt;
+    -reducer /usr/bin/wc
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Please note that the common problem for errors is that Hadoop is not running streaming when output folder exists.&lt;/p&gt;
+&lt;h3&gt;Python and XML&lt;/h3&gt;
+&lt;p&gt;Preparing Python scripts. Note that it other to make Python work on linux from command line directly (without explicitly calling &lt;code&gt;python&lt;/code&gt; you need to use proper headline as the first line of your Python script).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;chmod a+x ./mapper.py
+chmod a+x ./reducer.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;In case your host system is Windows and guest is Linux, you need to convert between Windows and Linux file formats.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dos2unix mapper.py
+dos2unix reducer.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Local testing facilities... Running simple testing locally, which will allows you to test your script without "heavy" MapReduce.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cat samplexml01.xml &lt;span class="p"&gt;|&lt;/span&gt; ./mapper.py &lt;span class="p"&gt;|&lt;/span&gt; ./reducer.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Hadoop Cluster, Python and XML&lt;/h3&gt;
+&lt;p&gt;Run Python scripts inside Hadoop cluster.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar &lt;span class="se"&gt;\&lt;/span&gt;
+    -input /data/xml/inputs/ &lt;span class="se"&gt;\&lt;/span&gt;
+    -output /data/xml/outputs/04/ &lt;span class="se"&gt;\&lt;/span&gt;
+    -file mapper.py &lt;span class="se"&gt;\&lt;/span&gt;
+    -file reducer.py &lt;span class="se"&gt;\&lt;/span&gt;
+    -mapper ./mapper.py &lt;span class="se"&gt;\&lt;/span&gt;
+    -reducer ./reducer.py
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Monitoring Resources of the Hortonworks VM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://localhost:8088/cluster"&gt;http://localhost:8088/cluster&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:50070/dfshealth.html#tab-overview"&gt;http://localhost:50070/dfshealth.html#tab-overview&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:8000/filebrowser/view/data/xml/outputs"&gt;http://localhost:8000/filebrowser/view/data/xml/outputs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://localhost:8080/#/main/dashboard/metrics"&gt;http://localhost:8080/#/main/dashboard/metrics&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h2&gt;Scripts and Files&lt;/h2&gt;
+&lt;p&gt;Simpler mapper (version 1)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;
+
+&lt;span class="c1"&gt;# some constants for local debugging&lt;/span&gt;
+&lt;span class="n"&gt;_input_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;input.txt&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;_output_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;output.txt&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_mapper&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Mapper that iterates through particular tags of XML file.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="n"&gt;inText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+    &lt;span class="n"&gt;currentTag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+    &lt;span class="n"&gt;tags&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ticketsection&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+
+        &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;lt;&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="c1"&gt;#print &amp;#39;[i] start copying&amp;#39;&lt;/span&gt;
+                &lt;span class="n"&gt;inText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+                &lt;span class="n"&gt;currentTag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt;
+
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;lt;/&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+                &lt;span class="c1"&gt;#print &amp;#39;[i] stop copying&amp;#39;&lt;/span&gt;
+                &lt;span class="n"&gt;inText&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+                &lt;span class="n"&gt;currentTag&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;None&lt;/span&gt;
+
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;inText&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+            &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{0}&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;{1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;currentTag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;from_file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Running scripts methods &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;from_file&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_input_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;r&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_output_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;w&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;_mapper&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;#run(True)&lt;/span&gt;
+    &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Simpler reducer&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;
+
+&lt;span class="c1"&gt;# some constants for local debugging&lt;/span&gt;
+&lt;span class="n"&gt;_input_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;input.txt&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;_output_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;output.txt&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_reducer&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Reducer that iterates through provided input and just prints it.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{0}:&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;{1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;from_file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Running scripts methods &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;from_file&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_input_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;r&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_output_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;w&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;_reducer&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;#run(True)&lt;/span&gt;
+    &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;File samplexml01.xml to be used by scripts&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="cp"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;xmlroot&lt;/span&gt; &lt;span class="na"&gt;xmlns:xsi=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+ &lt;span class="nt"&gt;&amp;lt;pather&lt;/span&gt; &lt;span class="na"&gt;guid=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;00011a0330-432432-4324-434324-4324353245sfds&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+     &lt;span class="nt"&gt;&amp;lt;ticketsection&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;attribute&lt;/span&gt; &lt;span class="na"&gt;value=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;EN&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;DefaultLanguage&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+       &lt;span class="nt"&gt;&amp;lt;attribute&lt;/span&gt; &lt;span class="na"&gt;value=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;New Value&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;name=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;SomeValues&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class="nt"&gt;&amp;lt;/ticketsection&amp;gt;&lt;/span&gt;
+  &lt;span class="nt"&gt;&amp;lt;/pather&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/xmlroot&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Simpler mapper (version 2)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="ch"&gt;#!/usr/bin/env python&lt;/span&gt;
+&lt;span class="c1"&gt;# -*- coding: utf-8 -*-&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;collections&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;defaultdict&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;xml.etree&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;ElementTree&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;uuid&lt;/span&gt;  &lt;span class="c1"&gt;# added&lt;/span&gt;
+
+&lt;span class="c1"&gt;# some constants for local debugging&lt;/span&gt;
+&lt;span class="n"&gt;_input_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;input.txt&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;_output_file&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;output.txt&amp;#39;&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_mapper&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Mapper that reads whole XML file and sends it to Reducer.&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="n"&gt;xml&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+    &lt;span class="n"&gt;unique_key&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;uuid&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;uuid4&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_hex&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;upper&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;xml&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;line&lt;/span&gt; &lt;span class="c1"&gt;#+ &amp;#39;\n&amp;#39;&lt;/span&gt;
+
+    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{0}&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;{1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unique_key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;xml&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="n"&gt;root&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ElementTree&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fromstring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;xml&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{0}&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;{1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unique_key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;root&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+        &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;{0}&lt;/span&gt;&lt;span class="se"&gt;\t&lt;/span&gt;&lt;span class="s1"&gt;[e]{1}&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;unique_key&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ex&lt;/span&gt;&lt;span class="p"&gt;)))&lt;/span&gt;
+
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;from_file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;quot;&amp;quot;&amp;quot; Running scripts methods &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;from_file&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_input_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;r&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+        &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;stdout&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;_output_file&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;w&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+    &lt;span class="n"&gt;_mapper&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="c1"&gt;#run(True)&lt;/span&gt;
+    &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="hadoop"></category><category term="streaming"></category><category term="xml"></category><category term="bigdata"></category></entry><entry><title>How to Motivate People in Creating, Maintaining Datasets</title><link href="http://vdmitriyev.github.io/blog/how-to-motivate-people-in-creating-maintaining-datasets.html" rel="alternate"></link><updated>2016-02-29T16:00:00+01:00</updated><author><name>Viktor Dmitriyev</name></author><id>tag:vdmitriyev.github.io,2016-02-29:blog/how-to-motivate-people-in-creating-maintaining-datasets.html</id><summary type="html">&lt;p&gt;&lt;img alt="BibTeX" src="http://vdmitriyev.github.io/blog/images/random/bibtex.png" /&gt;&lt;/p&gt;
 &lt;p&gt;Data and software tools were always "game drivers" in academia and industry. For nowadays, it's almost priceless trend for the onces who are trying to be on the "edge"  that most communities are open sourcing their results. And the other amazing part about open sourcing results is that datasets and software tools helped additional value creation are also published for free. And such tendency is true and ongoing in various aspects (e.g. teaching, content, datasets, software tools, etc.).&lt;/p&gt;
 &lt;p&gt;However, as long and tools and datasets are getting more and more.&lt;/p&gt;
 &lt;p&gt;Technically spoken, integration of "custom" fields into BibTeX is already happening. For instance, very popular bibliography managers such as &lt;a href="https://www.mendeley.com/"&gt;Mendeley&lt;/a&gt; and &lt;a href="https://www.zotero.org/"&gt;Zotero&lt;/a&gt; while exporting BibTeX-es in parallel embedding additional fields into exported file. Example of such field is "file" fields that helps aforementioned tools to maintain their libraries, it basically contains full (or relative) path to the scientific manuscript, which is usually pdf file.&lt;/p&gt;

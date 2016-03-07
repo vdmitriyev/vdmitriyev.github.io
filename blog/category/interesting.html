@@ -39,6 +39,7 @@
 </footer><!-- /.post-info --><h2>About</h2>
 <p>The general idea behind current post is to show how parsing of single XML file with Python script could be implemented with Hadoop Streaming.</p>
 <p>Trying <a href="https://hadoop.apache.org/docs/r1.2.1/streaming.html#Hadoop+Streaming">Hadoop Streaming</a> on Hortonworks Virtual Machine (VM) image (HDP version is 2.3.1). For streaming XML use following <a href="http://www.science.smith.edu/dftwiki/index.php/Hadoop_Tutorial_2.1_--_Streaming_XML_Files">Hadoop Tutorial 2.1 -- Streaming XML Files</a> article. All discussed Python scripts and XML data samples can be found at the end of current document in <strong>Scripts and Files</strong> section.</p>
+<p>In case you have your own Hadoop installation and you are accessing machine via your own user and you are having exceptions with 'Permission denied:' it's better if you will start streaming jobs under the name of <code>hdfs</code> user. In Ubuntu you can switch to <code>hdfs</code> user with command <code>sudo su hdfs -</code>.</p>
 <h3>Loading Data</h3>
 <p>Loading data (don't forget to copy that to Hadoop machine locally). If you are running your virtual machine on Windows host than propably you will find <a href="https://winscp.net/eng/download.php">WinSCP</a> useful.</p>
 <div class="highlight"><pre><span></span>hdfs dfs -mkdir /data/xml/inputs/

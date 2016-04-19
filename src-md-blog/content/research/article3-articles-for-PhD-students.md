@@ -1,4 +1,4 @@
-Title: Article for PhD Students
+Title: Articles for PhD Students
 Date: 2015-01-28 11:40
 Tags: collection, phd, research, tips
 
@@ -14,7 +14,6 @@ Here is the collection of articles I just wrote above:
 
 Additional articles related to PhD experience (added on 17.09.2015):
 
-
 * [5 secrets to surviving (and thriving in) a PhD program](http://www.elsevier.com/connect/5-secrets-to-surviving-and-progressing-in-a-phd-program)
     - Drops a light on topics which should be really taken into consideration during PhD study. Describes in a really good way how to distinguish between various dissertation forms and formats. Article also contains references to multiple research papers that discuss various aspects of research process and methodologies underneath.
 * [10 ways to make your PhD experience easier and more enjoyable](http://www.elsevier.com/connect/10-ways-to-make-your-phd-experience-easier-and-more-enjoyable)
@@ -24,5 +23,9 @@ Additional articles related to PhD experience (added on 17.09.2015):
 * [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/)
     - This article contains description of concrete problems faced during and after PhD and offers solutions to them
 
+Additional collection no "daily staff" of PhD students:
+
+* [Getting published: What distinguishes a good manuscript from a bad one?](https://www.elsevier.com/connect/get-published-what-distinguishes-a-good-manuscript-from-a-bad-one)
+    - One page visualization with clearly stayed p
 
 Wish you smooth defense at the end of you research journey. And try to have fun while you are working on problems no one solved before.

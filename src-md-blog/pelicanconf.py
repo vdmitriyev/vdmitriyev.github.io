@@ -12,9 +12,11 @@ except Exception, ex:
     pass
 
 AUTHOR = u'Viktor Dmitriyev'
-SITENAME = u'Yet Another Blog (YAB)'
-#SITEURL = 'http://localhost:8000/blog'
-SITEURL = 'http://vdmitriyev.github.io/blog'
+SITENAME = u'Viktor Dmitriyev'
+#SITENAME = u'Yet Another Blog (YAB)'
+
+#SITEURL = 'http://localhost:8000/blog/'
+SITEURL = 'http://vdmitriyev.github.io/blog/'
 
 PATH = 'content'
 
@@ -58,6 +60,8 @@ try:
 except Exception, ex:
     pass
 
+THEME = 'pure-single'
+
 DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -70,4 +74,18 @@ try:
     GOOGLE_ANALYTICS = configs.GOOGLE_ANALYTICS
 except Exception, ex:
     pass
+
+if THEME == 'pure-single':
+
+    PROFILE_IMG_URL = '{0}{1}'.format(SITEURL, 'images/viktor.jpg')
+    #print (PROFILE_IMAGE_URL)
+
+    # Social Widgets in Blogroll section
+    try:
+        SOCIAL = configs.SOCIAL
+    except Exception, ex:
+        pass
+
+
+
 

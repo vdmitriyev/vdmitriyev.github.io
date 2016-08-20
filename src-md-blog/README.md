@@ -28,6 +28,7 @@ run-simple-http.bat
 ```
 
 ### Personal configurations
+
 you need to create ```personal_configs.py``` file and fill following fields:
 ```
 #!/usr/bin/env python
@@ -47,6 +48,13 @@ LINKS = (('Twitter', '#'),
 
 More about configs and configs themselves you can find in pelican's [manual](http://docs.getpelican)com/en/3.5.0/settings.html)
 
+### Theme
+
+* Download [pure-single](https://github.com/PurePelicanTheme/pure-single)
+* Install
+```
+pelican-themes --install PATH
+```
 ### Author
 
 * Viktor Dmitriyev

@@ -1,508 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <title>Yet Another Blog (YAB)</title>
-        <link rel="stylesheet" href="http://vdmitriyev.github.io/blog/theme/css/main.css" />
-        <link href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Yet Another Blog (YAB) Atom Feed" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Viktor Dmitriyev, ">
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
+        <link rel="alternate"  href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" title="Viktor Dmitriyev Full Atom Feed"/>
+
+        <title>Viktor Dmitriyev // </title>
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://vdmitriyev.github.io/blog/theme/css/pure.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://vdmitriyev.github.io/blog/">Yet Another Blog (YAB) </a></h1>
-                <nav><ul>
-                    <li><a href="http://vdmitriyev.github.io/blog">Main</a></li>
-                    <li><a href="http://vdmitriyev.github.io/blog/category/interesting.html">Interesting</a></li>
-                    <li><a href="http://vdmitriyev.github.io/blog/category/research.html">Research</a></li>
-                    <li><a href="http://vdmitriyev.github.io/blog/category/thoughts.html">Thoughts</a></li>
-                    <li><a href="http://vdmitriyev.github.io/blog/category/raznoe.html">Разное</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://vdmitriyev.github.io/blog/hadoop-streaming-and-xml-with-python.html">Hadoop Streaming and XML with Python</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2016-03-03T18:00:00+01:00">
-                Published: March 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/hadoop.html">hadoop</a> <a href="http://vdmitriyev.github.io/blog/tag/streaming.html">streaming</a> <a href="http://vdmitriyev.github.io/blog/tag/xml.html">xml</a> <a href="http://vdmitriyev.github.io/blog/tag/bigdata.html">bigdata</a> <a href="http://vdmitriyev.github.io/blog/tag/python.html">python</a> </p>
-</footer><!-- /.post-info --><h2>About</h2>
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background: none repeat scroll 0% 0% #3D4F5D">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="http://vdmitriyev.github.io/blog/images/viktor.jpg">
+                            <h1 class="brand-main"><a href="http://vdmitriyev.github.io/blog">Viktor Dmitriyev</a></h1>
+                            <p class="tagline"></p>
+                                <p class="links"><a href="http://vdmitriyev.github.io/blog/">Main</a></p>
+                                <p class="links"><a href="http://vdmitriyev.github.io/blog//category/interesting.html">Interesting</a></p>
+                                <p class="links"><a href="http://vdmitriyev.github.io/blog//category/research.html">Research</a></p>
+                                <p class="links"><a href="http://vdmitriyev.github.io/blog//category/thoughts.html">Thoughts</a></p>
+                                <p class="links"><a href="http://vdmitriyev.github.io/blog//category/raznoe.html">Разное</a></p>
+                                <p class="social">
+                                    <a href="https://twitter.com/vdmitriyev">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                    <a href="https://github.com/vdmitriyev">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="http://dmitriyev.tumblr.com/">
+                                        <i class="fa fa-tumblr fa-3x"></i>
+                                    </a>
+                                    <a href="http://www.researchgate.net/profile/Viktor_Dmitriyev">
+                                        <i class="fa fa-researchgate fa-3x"></i>
+                                    </a>
+                                    <a href="http://orcid.org/0000-0001-5661-4587">
+                                        <i class="fa fa-orcid fa-3x"></i>
+                                    </a>
+                                </p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <!-- A wrapper for all the blog posts -->
+            <div class="posts">
+                <h1 class="content-subhead">
+                            Latest posts
+                </h1>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/hadoop-streaming-and-xml-with-python.html">Hadoop Streaming and XML with Python</a></h3>
+                            <p class="post-meta"><p><center>
+    <img alt="Hadoop Streaming and XML with Python" src="http://vdmitriyev.github.io/blog/images/random/hadoop-streaming.png" />
+</center></p>
 <p>The general idea behind current post is to show how parsing of single XML file with Python script could be implemented with Hadoop Streaming.</p>
-<p>Trying <a href="https://hadoop.apache.org/docs/r1.2.1/streaming.html#Hadoop+Streaming">Hadoop Streaming</a> on Hortonworks Virtual Machine (VM) image (HDP version is 2.3.1). For streaming XML use following <a href="http://www.science.smith.edu/dftwiki/index.php/Hadoop_Tutorial_2.1_--_Streaming_XML_Files">Hadoop Tutorial 2.1 -- Streaming XML Files</a> article. All discussed Python scripts and XML data samples can be found at the end of current document in <strong>Scripts and Files</strong> section.</p>
-<p>In case you have your own Hadoop installation and you are accessing machine via your own user and you are having exceptions with 'Permission denied:' it's better if you will start streaming jobs under the name of <code>hdfs</code> user. In Ubuntu you can switch to <code>hdfs</code> user with command <code>sudo su hdfs -</code>.</p>
-<h3>Loading Data</h3>
-<p>Loading data (don't forget to copy that to Hadoop machine locally). If you are running your virtual machine on Windows host than propably you will find <a href="https://winscp.net/eng/download.php">WinSCP</a> useful.</p>
-<div class="highlight"><pre><span></span>hdfs dfs -mkdir /data/xml/inputs/
-hdfs dfs -put /root/streaming/samplexml01.xml /data/xml/inputs/
-</pre></div>
-
-
-<p>Don't forget to copy Python scripts used within map-reduce phases on VM machine (where all commands are executed).</p>
-<h3>Prerequisites (CentOS)</h3>
-<p>You will need to use <code>dos2unix</code> utility on your Hortonworks VM only in case your host machine is Windows.</p>
-<div class="highlight"><pre><span></span>yum install dos2unix
-</pre></div>
-
-
-<h3>Simple Option with XML</h3>
-<p>Note Hadoop location for Hortonworks image is <code>/usr/hdp/current</code>.
-Try simplest option of streaming with default linux commands.</p>
-<div class="highlight"><pre><span></span>hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar <span class="se">\</span>
-    -input /data/xml/inputs/ <span class="se">\</span>
-    -output /data/xml/outputs/01/ <span class="se">\</span>
-    -mapper /bin/cat <span class="se">\</span>
-    -reducer /usr/bin/wc
-</pre></div>
-
-
-<p>Try simplest option of streaming with default linux commands and XML reader. Don't forget to remove previous output from HDFS, otherwise the MapReduce will thrown exception during execution (it cannot write it's output into existing directory).</p>
-<div class="highlight"><pre><span></span>hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar <span class="se">\</span>
-    -inputreader <span class="s2">&quot;StreamXmlRecordReader,begin=xmlroot,end=/xmlroot&quot;</span> <span class="se">\</span>
-    -input /data/xml/inputs/ <span class="se">\</span>
-    -output /data/xml/outputs/02/ <span class="se">\</span>
-    -mapper /bin/cat <span class="se">\</span>
-    -reducer /usr/bin/wc
-</pre></div>
-
-
-<p>Please note that the common problem for errors is that Hadoop is not running streaming when output folder exists.</p>
-<h3>Python and XML</h3>
-<p>Preparing Python scripts. Note that it other to make Python work on linux from command line directly (without explicitly calling <code>python</code> you need to use proper headline as the first line of your Python script).</p>
-<div class="highlight"><pre><span></span>chmod a+x ./mapper.py
-chmod a+x ./reducer.py
-</pre></div>
-
-
-<p>In case your host system is Windows and guest is Linux, you need to convert between Windows and Linux file formats.</p>
-<div class="highlight"><pre><span></span>dos2unix mapper.py
-dos2unix reducer.py
-</pre></div>
-
-
-<p>Local testing facilities... Running simple testing locally, which will allows you to test your script without "heavy" MapReduce.</p>
-<div class="highlight"><pre><span></span>cat samplexml01.xml <span class="p">|</span> ./mapper.py <span class="p">|</span> ./reducer.py
-</pre></div>
-
-
-<h3>Hadoop Cluster, Python and XML</h3>
-<p>Run Python scripts inside Hadoop cluster.</p>
-<div class="highlight"><pre><span></span>hadoop jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar <span class="se">\</span>
-    -input /data/xml/inputs/ <span class="se">\</span>
-    -output /data/xml/outputs/04/ <span class="se">\</span>
-    -file mapper.py <span class="se">\</span>
-    -file reducer.py <span class="se">\</span>
-    -mapper ./mapper.py <span class="se">\</span>
-    -reducer ./reducer.py
-</pre></div>
-
-
-<h3>Monitoring Resources of the Hortonworks VM</h3>
-<ul>
-<li><a href="http://localhost:8088/cluster">http://localhost:8088/cluster</a></li>
-<li><a href="http://localhost:50070/dfshealth.html#tab-overview">http://localhost:50070/dfshealth.html#tab-overview</a></li>
-<li><a href="http://localhost:8000/filebrowser/view/data/xml/outputs">http://localhost:8000/filebrowser/view/data/xml/outputs</a></li>
-<li><a href="http://localhost:8080/#/main/dashboard/metrics">http://localhost:8080/#/main/dashboard/metrics</a></li>
-</ul>
-<p></br></p>
-<h2>Scripts and Files</h2>
-<p>Simpler mapper (version 1)</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">defaultdict</span>
-
-<span class="c1"># some constants for local debugging</span>
-<span class="n">_input_file</span> <span class="o">=</span> <span class="s1">&#39;input.txt&#39;</span>
-<span class="n">_output_file</span> <span class="o">=</span> <span class="s1">&#39;output.txt&#39;</span>
-
-<span class="k">def</span> <span class="nf">_mapper</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; Mapper that iterates through particular tags of XML file.&quot;&quot;&quot;</span>
-
-    <span class="n">inText</span> <span class="o">=</span> <span class="bp">False</span>
-    <span class="n">currentTag</span> <span class="o">=</span> <span class="bp">None</span>
-    <span class="n">tags</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ticketsection&#39;</span><span class="p">]</span>
-
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
-
-        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
-
-            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span> <span class="s1">&#39;&lt;&#39;</span> <span class="o">+</span> <span class="n">tag</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                <span class="c1">#print &#39;[i] start copying&#39;</span>
-                <span class="n">inText</span> <span class="o">=</span> <span class="bp">True</span>
-                <span class="n">currentTag</span> <span class="o">=</span> <span class="n">tag</span>
-
-            <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;&lt;/&#39;</span> <span class="o">+</span> <span class="n">tag</span> <span class="o">+</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-                <span class="c1">#print &#39;[i] stop copying&#39;</span>
-                <span class="n">inText</span> <span class="o">=</span> <span class="bp">False</span>
-                <span class="n">currentTag</span> <span class="o">=</span> <span class="bp">None</span>
-
-        <span class="k">if</span> <span class="n">inText</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">currentTag</span><span class="p">,</span> <span class="n">line</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">from_file</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Running scripts methods &quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">from_file</span><span class="p">):</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_input_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-
-    <span class="n">_mapper</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="c1">#run(True)</span>
-    <span class="n">run</span><span class="p">()</span>
-</pre></div>
-
-
-<p>Simpler reducer</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">defaultdict</span>
-
-<span class="c1"># some constants for local debugging</span>
-<span class="n">_input_file</span> <span class="o">=</span> <span class="s1">&#39;input.txt&#39;</span>
-<span class="n">_output_file</span> <span class="o">=</span> <span class="s1">&#39;output.txt&#39;</span>
-
-<span class="k">def</span> <span class="nf">_reducer</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; Reducer that iterates through provided input and just prints it.&quot;&quot;&quot;</span>
-
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">tag</span><span class="p">,</span> <span class="n">text</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;{0}:</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">text</span><span class="p">))</span>
-
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">from_file</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Running scripts methods &quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">from_file</span><span class="p">):</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_input_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-
-    <span class="n">_reducer</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="c1">#run(True)</span>
-    <span class="n">run</span><span class="p">()</span>
-</pre></div>
-
-
-<p>File samplexml01.xml to be used by scripts</p>
-<div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
-<span class="nt">&lt;xmlroot</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
- <span class="nt">&lt;pather</span> <span class="na">guid=</span><span class="s">&quot;00011a0330-432432-4324-434324-4324353245sfds&quot;</span><span class="nt">&gt;</span>
-     <span class="nt">&lt;ticketsection&gt;</span>
-       <span class="nt">&lt;attribute</span> <span class="na">value=</span><span class="s">&quot;EN&quot;</span> <span class="na">name=</span><span class="s">&quot;DefaultLanguage&quot;</span><span class="nt">/&gt;</span>
-       <span class="nt">&lt;attribute</span> <span class="na">value=</span><span class="s">&quot;New Value&quot;</span> <span class="na">name=</span><span class="s">&quot;SomeValues&quot;</span><span class="nt">/&gt;</span>
-      <span class="nt">&lt;/ticketsection&gt;</span>
-  <span class="nt">&lt;/pather&gt;</span>
-<span class="nt">&lt;/xmlroot&gt;</span>
-</pre></div>
-
-
-<p>Simpler mapper (version 2)</p>
-<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
-<span class="c1"># -*- coding: utf-8 -*-</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span> <span class="k">as</span> <span class="n">defaultdict</span>
-<span class="kn">from</span> <span class="nn">xml.etree</span> <span class="kn">import</span> <span class="n">ElementTree</span>
-
-<span class="kn">import</span> <span class="nn">uuid</span>  <span class="c1"># added</span>
-
-<span class="c1"># some constants for local debugging</span>
-<span class="n">_input_file</span> <span class="o">=</span> <span class="s1">&#39;input.txt&#39;</span>
-<span class="n">_output_file</span> <span class="o">=</span> <span class="s1">&#39;output.txt&#39;</span>
-
-<span class="k">def</span> <span class="nf">_mapper</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot; Mapper that reads whole XML file and sends it to Reducer.&quot;&quot;&quot;</span>
-
-    <span class="n">xml</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
-    <span class="n">unique_key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span><span class="o">.</span><span class="n">get_hex</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
-
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="p">:</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-        <span class="n">xml</span> <span class="o">+=</span> <span class="n">line</span> <span class="c1">#+ &#39;\n&#39;</span>
-
-    <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unique_key</span><span class="p">,</span> <span class="n">xml</span><span class="p">))</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="n">ElementTree</span><span class="o">.</span><span class="n">fromstring</span><span class="p">(</span><span class="n">xml</span><span class="p">)</span>
-        <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unique_key</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">root</span><span class="p">)))</span>
-    <span class="k">except</span> <span class="ne">Exception</span><span class="p">,</span><span class="n">ex</span><span class="p">:</span>
-        <span class="k">print</span> <span class="p">(</span><span class="s1">&#39;{0}</span><span class="se">\t</span><span class="s1">[e]{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">unique_key</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">)))</span>
-
-
-<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">from_file</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Running scripts methods &quot;&quot;&quot;</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="n">from_file</span><span class="p">):</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_input_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">_output_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
-
-    <span class="n">_mapper</span><span class="p">()</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="c1">#run(True)</span>
-    <span class="n">run</span><span class="p">()</span>
-</pre></div>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/how-to-motivate-people-in-creating-maintaining-datasets.html" rel="bookmark"
-                           title="Permalink to How to Motivate People in Creating, Maintaining Datasets">How to Motivate People in Creating, Maintaining Datasets</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2016-02-29T16:00:00+01:00">
-                Published: February 2016
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/tex.html">TeX</a> <a href="http://vdmitriyev.github.io/blog/tag/bibtex.html">BibTeX</a> <a href="http://vdmitriyev.github.io/blog/tag/credits.html">credits</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/datasets.html">datasets</a> </p>
-</footer><!-- /.post-info -->                <p><img alt="BibTeX" src="http://vdmitriyev.github.io/blog/images/random/bibtex.png" /></p>
-<p>Data and software tools were always "game drivers" in academia and industry. For nowadays, it's almost priceless trend for the onces who are trying to be on the "edge"  that most communities are open sourcing their results. And the other amazing part about open sourcing results is that datasets ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/how-to-motivate-people-in-creating-maintaining-datasets.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/publications-bibliography-based-on-bibtex.html" rel="bookmark"
-                           title="Permalink to Publications Bibliography Based on BibTeX">Publications Bibliography Based on BibTeX</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-11-13T18:00:00+01:00">
-                Published: November 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/tex.html">TeX</a> <a href="http://vdmitriyev.github.io/blog/tag/bibtex.html">BibTeX</a> <a href="http://vdmitriyev.github.io/blog/tag/bibliography.html">bibliography</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> </p>
-</footer><!-- /.post-info -->                <p><img alt="BibTeX" src="http://vdmitriyev.github.io/blog/images/random/bibtex.png" /></p>
-<p>It's often not a trivial task to manage bibliographies of your own publications. Especially, it's getting harder with time as long as more services and tools appearance on the horizon. And very often there is no chance for research communities to ignore some of them because they are ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/publications-bibliography-based-on-bibtex.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/own-collection-of-resources-related-to-data-science-and-buzz-around.html" rel="bookmark"
-                           title="Permalink to Own Collection of Resources Related to Data Science and Buzz Around">Own Collection of Resources Related to Data Science and Buzz Around</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-08-11T18:00:00+02:00">
-                Published: August 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/science.html">science</a> <a href="http://vdmitriyev.github.io/blog/tag/phd.html">phd</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> </p>
-</footer><!-- /.post-info -->                <p><center>
+<p>Trying <a href="https://hadoop.apache.org/docs/r1.2.1/streaming.html#Hadoop+Streaming">Hadoop Streaming</a> on Hortonworks Virtual Machine (VM) image (HDP version is 2.3.1). For streaming XML use following <a href="http://www.science.smith.edu/dftwiki/index.php/Hadoop_Tutorial_2.1_--_Streaming_XML_Files">Hadoop Tutorial 2.1 -- Streaming XML ...</a></p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a> &middot; March 2016
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/how-to-motivate-people-in-creating-maintaining-datasets.html">How to Motivate People in Creating, Maintaining Datasets</a></h3>
+                            <p class="post-meta"><p><center>
+    <img alt="BibTeX" src="http://vdmitriyev.github.io/blog/images/random/bibtex-datasets.png" />
+</center></p>
+<p>Data and software tools were always "game drivers" in academia and industry. For nowadays, it's almost priceless trend for the onces who are trying to be on the "edge"  that most communities are open sourcing their results. And the other amazing part about open sourcing results is that datasets ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; February 2016
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/publications-bibliography-based-on-bibtex.html">Publications Bibliography Based on BibTeX</a></h3>
+                            <p class="post-meta"><p><img alt="BibTeX" src="http://vdmitriyev.github.io/blog/images/random/bibtex.png" /></p>
+<p>It's often not a trivial task to manage bibliographies of your own publications. Especially, it's getting harder with time as long as more services and tools appearance on the horizon. And very often there is no chance for research communities to ignore some of them because they are ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; November 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/own-collection-of-resources-related-to-data-science-and-buzz-around.html">Own Collection of Resources Related to Data Science and Buzz Around</a></h3>
+                            <p class="post-meta"><p><center>
     <img alt="Own Collection of Resources Related to Data Science and Buzz Around" src="http://vdmitriyev.github.io/blog/images/random/datascience-related-resources-white.png" />
 </center></p>
 <p>I'm subscribed to the following newsletters and I'm trying to dedicate 1-2 hours of my time weekly in order to get at once through all newsletters I receive regularly.</p>
 <ul>
 <li><a href="http://dataelixir.com/">Data Elixir</a><ul>
-<li><em>Data Elixir is a weekly collection of the best data science news, resources, and inspirations from around ...</em></li></ul></li></ul>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/own-collection-of-resources-related-to-data-science-and-buzz-around.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/false-positive-in-real-life-wordpress-just-blocked-my-personal-blog.html" rel="bookmark"
-                           title="Permalink to False Positive in Real Life - Wordpress Just Blocked My Personal Blog">False Positive in Real Life - Wordpress Just Blocked My Personal Blog</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-06-11T01:00:00+02:00">
-                Published: June 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/blog.html">blog</a> <a href="http://vdmitriyev.github.io/blog/tag/block.html">block</a> <a href="http://vdmitriyev.github.io/blog/tag/github.html">GitHub</a> <a href="http://vdmitriyev.github.io/blog/tag/fpr.html">FPR</a> <a href="http://vdmitriyev.github.io/blog/tag/ml.html">ML</a> </p>
-</footer><!-- /.post-info -->                <p>Hurra! I have one platform less to maintain!</p>
+<li><em>Data Elixir is a weekly collection of the best data science news, resources, and inspirations from around ...</em></li></ul></li></ul></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; August 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/false-positive-in-real-life-wordpress-just-blocked-my-personal-blog.html">False Positive in Real Life - Wordpress Just Blocked My Personal Blog</a></h3>
+                            <p class="post-meta"><p>Hurra! I have one platform less to maintain!</p>
 <p>Very short story - for no reason wordpress.com blocked my personal blog, which they were hosting for free.</p>
-<p>It's nice that since long I moved everything to the github.com repository and started to support my personal blog mainly in markdown ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/false-positive-in-real-life-wordpress-just-blocked-my-personal-blog.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/how-to-export-ms-power-point-slides-to-a-pdf-file-and-keep-animations.html" rel="bookmark"
-                           title="Permalink to How to export MS Power Point Slides to a PDF file and keep Animations">How to export MS Power Point Slides to a PDF file and keep Animations</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-06-03T18:00:00+02:00">
-                Published: June 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/ppt.html">PPT</a> <a href="http://vdmitriyev.github.io/blog/tag/pdf.html">PDF</a> <a href="http://vdmitriyev.github.io/blog/tag/animations.html">animations</a> <a href="http://vdmitriyev.github.io/blog/tag/export.html">export</a> </p>
-</footer><!-- /.post-info -->                <p><img alt="From Animated PPT to Animated PDF" src="http://vdmitriyev.github.io/blog/images/random/PPT-to-PDFwith-Animations.png" /></p>
-<p>From time to time I need to present some content in-front of the audience, of course in form of the presentation with some slides helping me. Despite I'm not a huge fan of animations, they can be really helpful in delivering the ideas during a talk. Especially, animations within ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/how-to-export-ms-power-point-slides-to-a-pdf-file-and-keep-animations.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/how-to-write-a-team-publication-in-latex-and-dont-get-mad.html" rel="bookmark"
-                           title="Permalink to How to Write a Team Publication in LaTeX and Dont Get Mad">How to Write a Team Publication in LaTeX and Dont Get Mad</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-05-29T18:00:00+02:00">
-                Published: May 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> <a href="http://vdmitriyev.github.io/blog/tag/phd.html">phd</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/latex.html">latex</a> <a href="http://vdmitriyev.github.io/blog/tag/writing.html">writing</a> </p>
-</footer><!-- /.post-info -->                <p><img alt="Don't get mad, get motivated and use LaTeX" src="http://vdmitriyev.github.io/blog/images/random/dont-get-mad-use-latex.png" /></p>
+<p>It's nice that since long I moved everything to the github.com repository and started to support my personal blog mainly in markdown ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a> &middot; June 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/how-to-export-ms-power-point-slides-to-a-pdf-file-and-keep-animations.html">How to export MS Power Point Slides to a PDF file and keep Animations</a></h3>
+                            <p class="post-meta"><p><img alt="From Animated PPT to Animated PDF" src="http://vdmitriyev.github.io/blog/images/random/PPT-to-PDFwith-Animations.png" /></p>
+<p>From time to time I need to present some content in-front of the audience, of course in form of the presentation with some slides helping me. Despite I'm not a huge fan of animations, they can be really helpful in delivering the ideas during a talk. Especially, animations within ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a> &middot; June 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/how-to-write-a-team-publication-in-latex-and-dont-get-mad.html">How to Write a Team Publication in LaTeX and Dont Get Mad</a></h3>
+                            <p class="post-meta"><p><img alt="Don't get mad, get motivated and use LaTeX" src="http://vdmitriyev.github.io/blog/images/random/dont-get-mad-use-latex.png" /></p>
 <p><center>
 <strong>Publishing is not a sprint to the finish line.</strong> </br>
 <strong>There is no finish line.</strong> </br>
 <strong>You just keep on running.</strong> </br>
 via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradElitism</a>
 </center></p>
-<p>A really huge amount of people around the glob use <a href="http://www.latex-project.org/">LaTeX</a> as a primary software tool (or you can say "package") for writing, formating or just maintaining their own ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/how-to-write-a-team-publication-in-latex-and-dont-get-mad.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/hosting-your-generated-from-markdown-by-python-static-blog-in-the-sap-hana-clouds-git-repository.html" rel="bookmark"
-                           title="Permalink to Hosting Your Generated from Markdown by Python Static Blog in the SAP HANA Cloud's Git Repository">Hosting Your Generated from Markdown by Python Static Blog in the SAP HANA Cloud's Git Repository</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-03-13T18:07:00+01:00">
-                Published: March 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/python.html">python</a> <a href="http://vdmitriyev.github.io/blog/tag/git.html">git</a> <a href="http://vdmitriyev.github.io/blog/tag/github.html">github</a> <a href="http://vdmitriyev.github.io/blog/tag/saphanacloud.html">saphanacloud</a> <a href="http://vdmitriyev.github.io/blog/tag/markdown.html">markdown</a> <a href="http://vdmitriyev.github.io/blog/tag/blog.html">blog</a> <a href="http://vdmitriyev.github.io/blog/tag/cloud.html">cloud</a> <a href="http://vdmitriyev.github.io/blog/tag/html5.html">html5</a> </p>
-</footer><!-- /.post-info -->                <h3>About</h3>
+<p>A really huge amount of people around the glob use <a href="http://www.latex-project.org/">LaTeX</a> as a primary software tool (or you can say "package") for writing, formating or just maintaining their own ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; May 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/hosting-your-generated-from-markdown-by-python-static-blog-in-the-sap-hana-clouds-git-repository.html">Hosting Your Generated from Markdown by Python Static Blog in the SAP HANA Cloud's Git Repository</a></h3>
+                            <p class="post-meta"><h3>About</h3>
 <p>Current blog post is going to describe how to use mix from various technologies in order to establish a static HTML blog that is auto-generated from the markdown files by means of the Python's package Pelican and finally hosted in the SAP HANA Cloud's git repository.</p>
-<p>The ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/hosting-your-generated-from-markdown-by-python-static-blog-in-the-sap-hana-clouds-git-repository.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/list-of-python-books-to-bring-your-python-skills-one-level-up.html" rel="bookmark"
-                           title="Permalink to List of Python Books to Bring Your Python Skills One Level Up">List of Python Books to Bring Your Python Skills One Level Up</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-03-06T00:00:00+01:00">
-                Published: March 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/all.html">All</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/books.html">books</a> <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> <a href="http://vdmitriyev.github.io/blog/tag/links.html">links</a> <a href="http://vdmitriyev.github.io/blog/tag/python.html">python</a> </p>
-</footer><!-- /.post-info -->                <p>I have an programming experience in various of languages, mainly from the mainstream category like C++, Java, C#, JavaScript, etc. . Despite having a really big variety of programming languages, sometimes you want to stick to particular one. For me it’s currently the <a href="https://www.python.org/">Python</a>.</p>
-<p>After I spent some time writing ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/list-of-python-books-to-bring-your-python-skills-one-level-up.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/proverka-pravopisaniia-russkogo-iazyka-v-notepad.html" rel="bookmark"
-                           title="Permalink to Проверка правописания русского языка в Notepad++">Проверка правописания русского языка в Notepad++</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-02-23T22:39:00+01:00">
-                Published: February 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/notepad.html">notepad++</a> <a href="http://vdmitriyev.github.io/blog/tag/russian-language.html">russian language</a> <a href="http://vdmitriyev.github.io/blog/tag/spell-check.html">spell check</a> </p>
-</footer><!-- /.post-info -->                <p>Для многих разработчиков по Windows (и не только) текстовый редактор Notepad++ стал неотъемлемой частью их ежедневного рабочего процесса.</p>
-<p>В недалеком (или уже далеком) примерно 2012-ом году в Notepad++ появилась встроенная проверка орфографии и написания, но вот только английского языка, чем я успешно пользовался в последнее время. А сейчас же ситуация ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/proverka-pravopisaniia-russkogo-iazyka-v-notepad.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/worth-checking-resources-on-visualization.html" rel="bookmark"
-                           title="Permalink to Worth Checking Resources On Visualization">Worth Checking Resources On Visualization</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-02-06T15:10:00+01:00">
-                Published: February 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/links.html">links</a> <a href="http://vdmitriyev.github.io/blog/tag/materials.html">materials</a> <a href="http://vdmitriyev.github.io/blog/tag/visualization.html">visualization</a> </p>
-</footer><!-- /.post-info -->                <p>Collection of the resources about the generic visualization techniques, examples, tools that I personally like and found worth checking and seeing at least once.</p>
+<p>The ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a> &middot; March 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/list-of-python-books-to-bring-your-python-skills-one-level-up.html">List of Python Books to Bring Your Python Skills One Level Up</a></h3>
+                            <p class="post-meta"><p>I have an programming experience in various of languages, mainly from the mainstream category like C++, Java, C#, JavaScript, etc. . Despite having a really big variety of programming languages, sometimes you want to stick to particular one. For me it’s currently the <a href="https://www.python.org/">Python</a>.</p>
+<p>After I spent some time writing ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/all.html">All</a> &middot; March 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/proverka-pravopisaniia-russkogo-iazyka-v-notepad.html">Проверка правописания русского языка в Notepad++</a></h3>
+                            <p class="post-meta"><p>Для многих разработчиков по Windows (и не только) текстовый редактор Notepad++ стал неотъемлемой частью их ежедневного рабочего процесса.</p>
+<p>В недалеком (или уже далеком) примерно 2012-ом году в Notepad++ появилась встроенная проверка орфографии и написания, но вот только английского языка, чем я успешно пользовался в последнее время. А сейчас же ситуация ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a> &middot; February 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/worth-checking-resources-on-visualization.html">Worth Checking Resources On Visualization</a></h3>
+                            <p class="post-meta"><p>Collection of the resources about the generic visualization techniques, examples, tools that I personally like and found worth checking and seeing at least once.</p>
 <p><br /></p>
 <h2>Visualization techniques and best practices</h2>
 <ul>
@@ -513,74 +193,35 @@ via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradEli
 <li>
 <p><strong>A Periodic Table of Visualization Methods</strong></p>
 <ul>
-<li><a href="http://www.visual-literacy.org/periodic_table/periodic_table.html">http://www.visual-literacy.org/periodic_table ...</a></li></ul></li></ul>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/worth-checking-resources-on-visualization.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/copy-from-mac-os-to-the-hdd-with-ntfs-file-system.html" rel="bookmark"
-                           title="Permalink to Copy from Mac OS to the HDD with NTFS File System">Copy from Mac OS to the HDD with NTFS File System</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-02-02T21:05:00+01:00">
-                Published: February 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/howtos.html">howtos</a> <a href="http://vdmitriyev.github.io/blog/tag/mac-tutorials.html">mac tutorials</a> <a href="http://vdmitriyev.github.io/blog/tag/trick.html">trick</a> </p>
-</footer><!-- /.post-info -->                <p>Even in the 21th century it's very tricky accomplish simple tasks like copying files from the Mac OS to the HDD, in case drive disk formatted as NTFS. To overcome this issues without paying money, but investing a bit of your time, plenty of patience, some "searching with the ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/copy-from-mac-os-to-the-hdd-with-ntfs-file-system.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/articles-for-phd-students.html" rel="bookmark"
-                           title="Permalink to Articles for PhD Students">Articles for PhD Students</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-01-28T11:40:00+01:00">
-                Published: January 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> <a href="http://vdmitriyev.github.io/blog/tag/phd.html">phd</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/tips.html">tips</a> </p>
-</footer><!-- /.post-info -->                <p>As time of your master degree pass by, or any other "after big study activity", people stars to think about the future. And one of the possible "future step" that they consider as an important and very prominent one is doing PhD.</p>
-<p>This blog post offers the collection of the ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/articles-for-phd-students.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/collection-of-resource-for-searching-scientific-publications.html" rel="bookmark"
-                           title="Permalink to Collection of Resource for Searching Scientific Publications">Collection of Resource for Searching Scientific Publications</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-01-26T15:20:00+01:00">
-                Published: January 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/computer-science.html">computer science</a> <a href="http://vdmitriyev.github.io/blog/tag/publication.html">publication</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/collection.html">collection</a> </p>
-</footer><!-- /.post-info -->                <h3>About</h3>
+<li><a href="http://www.visual-literacy.org/periodic_table/periodic_table.html">http://www.visual-literacy.org/periodic_table ...</a></li></ul></li></ul></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a> &middot; February 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/copy-from-mac-os-to-the-hdd-with-ntfs-file-system.html">Copy from Mac OS to the HDD with NTFS File System</a></h3>
+                            <p class="post-meta"><p>Even in the 21th century it's very tricky accomplish simple tasks like copying files from the Mac OS to the HDD, in case drive disk formatted as NTFS. To overcome this issues without paying money, but investing a bit of your time, plenty of patience, some "searching with the ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a> &middot; February 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/articles-for-phd-students.html">Articles for PhD Students</a></h3>
+                            <p class="post-meta"><p>As time of your master degree pass by, or any other "after big study activity", people stars to think about the future. And one of the possible "future step" that they consider as an important and very prominent one is doing PhD.</p>
+<p>This blog post offers the collection of the ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; January 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/collection-of-resource-for-searching-scientific-publications.html">Collection of Resource for Searching Scientific Publications</a></h3>
+                            <p class="post-meta"><h3>About</h3>
 <p>Collection of an online resources with other additional tricks for searching scientific/research publication.</p>
 <h3>Collection of Resource for Searching Scientific Publications</h3>
 <ul>
@@ -589,29 +230,16 @@ via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradEli
 </ul>
 </li>
 <li><a href="https://scholar.google.com">https://scholar.google.com</a><ul>
-<li>Service from Google Inc. to search for the ...</li></ul></li></ul>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/collection-of-resource-for-searching-scientific-publications.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/one-line-tips-for-remembering-more.html" rel="bookmark"
-                           title="Permalink to "One line" Tips for Remembering More">"One line" Tips for Remembering More</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2015-01-23T00:00:00+01:00">
-                Published: January 2015
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/howtos.html">howtos</a> <a href="http://vdmitriyev.github.io/blog/tag/improve.html">improve</a> <a href="http://vdmitriyev.github.io/blog/tag/learn.html">learn</a> <a href="http://vdmitriyev.github.io/blog/tag/memory.html">memory</a> </p>
-</footer><!-- /.post-info -->                <ol>
+<li>Service from Google Inc. to search for the ...</li></ul></li></ul></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; January 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/one-line-tips-for-remembering-more.html">"One line" Tips for Remembering More</a></h3>
+                            <p class="post-meta"><ol>
 <li>Extra attention to difficult information <strong>[go-deeper] [focus-hard]</strong></li>
 <li>Visualization improves memory and recall <strong>[mind-map] [hand-drawing]</strong></li>
 <li>Teach new concepts to another <strong>[blog] [oral] [writing] [rephrasing]</strong></li>
@@ -619,242 +247,144 @@ via <a href="https://twitter.com/GradElitism/status/606184614453846018">@GradEli
 <li>Use memorization techniques <strong>[chunking] [aggressive-visualization] [multiple-approach] [mnemonics]</strong></li>
 <li>Force yourself to recall <strong>[recall] [no-fluency]</strong></li>
 <li>Impress, associate, repeat</li>
-<li>Accept that remembering more it ...</li></ol>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/one-line-tips-for-remembering-more.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/how-to-understand-yourself-simplest-possible-guideline-and-drawbacks-of-other-methods.html" rel="bookmark"
-                           title="Permalink to How to Understand Yourself: Simplest Possible Guideline and Drawbacks of Other Methods">How to Understand Yourself: Simplest Possible Guideline and Drawbacks of Other Methods</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-09-25T18:00:00+02:00">
-                Published: September 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/thoughts.html">thoughts</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/thoughts.html">thoughts</a> </p>
-</footer><!-- /.post-info -->                <p>Today I got a question from my friend on the topic of analysis. And this kind of analysis is usually very interesting for anyone who at least once in his life tried to understand himself. This kind of an analysis usually called "self-analysis". "Self-analysis" means understanding your own behavior, the ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/how-to-understand-yourself-simplest-possible-guideline-and-drawbacks-of-other-methods.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/notes-on-video-how-to-write-a-great-research-paper.html" rel="bookmark"
-                           title="Permalink to Notes on Video “How to Write a Great Research Paper”">Notes on Video “How to Write a Great Research Paper”</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-04-28T00:00:00+02:00">
-                Published: April 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/notes.html">notes</a> <a href="http://vdmitriyev.github.io/blog/tag/paper.html">paper</a> <a href="http://vdmitriyev.github.io/blog/tag/publication.html">publication</a> <a href="http://vdmitriyev.github.io/blog/tag/research.html">research</a> <a href="http://vdmitriyev.github.io/blog/tag/video.html">video</a> </p>
-</footer><!-- /.post-info -->                <p>Short notes (or summary) taken while watching lecture <a href="https://www.youtube.com/watch?v=g3dkRsTqdDA">How to Write a Great Research Paper</a> given by Professor Simon Peyton Jones (Microsoft Research).</p>
+<li>Accept that remembering more it ...</li></ol></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a> &middot; January 2015
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/how-to-understand-yourself-simplest-possible-guideline-and-drawbacks-of-other-methods.html">How to Understand Yourself: Simplest Possible Guideline and Drawbacks of Other Methods</a></h3>
+                            <p class="post-meta"><p>Today I got a question from my friend on the topic of analysis. And this kind of analysis is usually very interesting for anyone who at least once in his life tried to understand himself. This kind of an analysis usually called "self-analysis". "Self-analysis" means understanding your own behavior, the ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/thoughts.html">thoughts</a> &middot; September 2014
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/notes-on-video-how-to-write-a-great-research-paper.html">Notes on Video “How to Write a Great Research Paper”</a></h3>
+                            <p class="post-meta"><p>Short notes (or summary) taken while watching lecture <a href="https://www.youtube.com/watch?v=g3dkRsTqdDA">How to Write a Great Research Paper</a> given by Professor Simon Peyton Jones (Microsoft Research).</p>
 <p>Primary, author giving 7 suggestions about writing a great research paper.</p>
 <p><strong>1. Don’t wait: write</strong></p>
-<p>Different models of writing research paper exists. One of the most ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/notes-on-video-how-to-write-a-great-research-paper.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/there-are-no-good-days-to-start-new-business-pick-randomly.html" rel="bookmark"
-                           title="Permalink to There Are No Good Days To Start New Business, Pick Randomly">There Are No Good Days To Start New Business, Pick Randomly</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2014-04-25T00:00:00+02:00">
-                Published: April 2014
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/thoughts.html">thoughts</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/english.html">english</a> <a href="http://vdmitriyev.github.io/blog/tag/random.html">random</a> <a href="http://vdmitriyev.github.io/blog/tag/statistically-average-human.html">statistically average human</a> <a href="http://vdmitriyev.github.io/blog/tag/why-not.html">why not?</a> </p>
-</footer><!-- /.post-info -->                <p>Very nice Friday Evening!</p>
-<p>It’s never the right day to start something new. In this sense, any kind of business can be started at any time. As the result, derived from the to previous trow claims, today is a good day to start with new series of article in ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/there-are-no-good-days-to-start-new-business-pick-randomly.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/mysli-o-privychkakh.html" rel="bookmark"
-                           title="Permalink to Мысли о привычках">Мысли о привычках</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-11-22T18:00:00+01:00">
-                Published: November 2013
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
-
-</footer><!-- /.post-info -->                <p>Когда находишься на разных «совещаниях» порой в голову приходят очень странные мысли. Вот к примеру она из подобных.</p>
-<p>Откуда привычка говорить красиво и долго, но с малым и довольно очевидным смыслом на собраниях? Это видимо какой-то человеческий рефлекс, особенно свойственный академическо-университетской среде. С одной стороны это оправдано — поразить красноречением и ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/mysli-o-privychkakh.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/cebit-2013.html" rel="bookmark"
-                           title="Permalink to CeBIT 2013">CeBIT 2013</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-03-06T23:00:00+01:00">
-                Published: March 2013
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/cebit.html">cebit</a> <a href="http://vdmitriyev.github.io/blog/tag/2013.html">2013</a> <a href="http://vdmitriyev.github.io/blog/tag/photos.html">photos</a> </p>
-</footer><!-- /.post-info -->                <p>Буквально вчера побывал на выставке CeBIT 2013 проходящей в данный момент в Ганновере, Германия. </p>
+<p>Different models of writing research paper exists. One of the most ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; April 2014
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/there-are-no-good-days-to-start-new-business-pick-randomly.html">There Are No Good Days To Start New Business, Pick Randomly</a></h3>
+                            <p class="post-meta"><p>Very nice Friday Evening!</p>
+<p>It’s never the right day to start something new. In this sense, any kind of business can be started at any time. As the result, derived from the to previous trow claims, today is a good day to start with new series of article in ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/thoughts.html">thoughts</a> &middot; April 2014
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/mysli-o-privychkakh.html">Мысли о привычках</a></h3>
+                            <p class="post-meta"><p>Когда находишься на разных «совещаниях» порой в голову приходят очень странные мысли. Вот к примеру она из подобных.</p>
+<p>Откуда привычка говорить красиво и долго, но с малым и довольно очевидным смыслом на собраниях? Это видимо какой-то человеческий рефлекс, особенно свойственный академическо-университетской среде. С одной стороны это оправдано — поразить красноречением и ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a> &middot; November 2013
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/cebit-2013.html">CeBIT 2013</a></h3>
+                            <p class="post-meta"><p>Буквально вчера побывал на выставке CeBIT 2013 проходящей в данный момент в Ганновере, Германия. </p>
 <p><strong>Что такое CeBIT?</strong></p>
 <p><em>CeBIT (от нем. Centrum der Buro- und Informationstechnik — центр офисных и информационных технологий) — крупнейшая в мире международная выставка, посвящённая информационным и телекоммуникационным технологиям <a href="http://en.wikipedia.org/wiki/CeBIT">wikipedia</a>.</em></p>
 <p><img alt="Logo" src="images/cebit2013/logo.png" /></p>
 <p>Сайт выставки - <a href="http://www.cebit.de/home">http://www.cebit.de/home</a>. 
-Дальше будут ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/cebit-2013.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/iitu-sorting-algorithms.html" rel="bookmark"
-                           title="Permalink to IITU Sorting Algorithms">IITU Sorting Algorithms</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2011-12-11T23:00:00+01:00">
-                Published: December 2011
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/sorting.html">sorting</a> <a href="http://vdmitriyev.github.io/blog/tag/algorithms.html">algorithms</a> </p>
-</footer><!-- /.post-info -->                <p>Две недели назад(в начале декабря 2011-го года) я с ещё одним из преподавателей университета дал творческое задание нашим студентам первого курса по предмету алгоритмизация (в простонародье "C++", "плюсы" и т.д.). Задание заключалось в том, чтобы станцевать национальный танец под казахскую национальную музыку таким образом,чтобы получился один из ...</p>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/iitu-sorting-algorithms.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/lektsiia-ot-sozdatelia-stl-a-stepanov.html" rel="bookmark"
-                           title="Permalink to Лекция от создателя STL А. Степанов">Лекция от создателя STL А. Степанов</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2010-09-24T00:00:00+02:00">
-                Published: September 2010
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
-
-</footer><!-- /.post-info -->                <p>Лекция А. Степанов в Яндексе – автор STL, экс-президент AT&amp;T, экс-президент HP/Compaq, ведущий ученый в Adobe рассказывает популярно, о истории алгоритма нахождения наибольшего общего делителя.</p>
+Дальше будут ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a> &middot; March 2013
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/iitu-sorting-algorithms.html">IITU Sorting Algorithms</a></h3>
+                            <p class="post-meta"><p>Две недели назад(в начале декабря 2011-го года) я с ещё одним из преподавателей университета дал творческое задание нашим студентам первого курса по предмету алгоритмизация (в простонародье "C++", "плюсы" и т.д.). Задание заключалось в том, чтобы станцевать национальный танец под казахскую национальную музыку таким образом,чтобы получился один из ...</p></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a> &middot; December 2011
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/lektsiia-ot-sozdatelia-stl-a-stepanov.html">Лекция от создателя STL А. Степанов</a></h3>
+                            <p class="post-meta"><p>Лекция А. Степанов в Яндексе – автор STL, экс-президент AT&amp;T, экс-президент HP/Compaq, ведущий ученый в Adobe рассказывает популярно, о истории алгоритма нахождения наибольшего общего делителя.</p>
 <p>Основные прозвучавшие идеи (не об алгоритме, а о текущем состоянии науки):</p>
 <ol>
-<li>Computer Scientists должны знать математику и это ошибочно от нее уходить. Информатика тесно ...</li></ol>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/lektsiia-ot-sozdatelia-stl-a-stepanov.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://vdmitriyev.github.io/blog/onlain-resursy-codecademycom-i-codingbatcom.html" rel="bookmark"
-                           title="Permalink to Онлайн ресурсы codecademy.com и codingbat.com">Онлайн ресурсы codecademy.com и codingbat.com</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2010-08-23T18:00:00+02:00">
-                Published: August 2010
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="http://vdmitriyev.github.io/blog/author/viktor-dmitriyev.html">Viktor Dmitriyev</a>
-        </address>
-<p>In <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a>. </p>
-<p>tags: <a href="http://vdmitriyev.github.io/blog/tag/online.html">online</a> <a href="http://vdmitriyev.github.io/blog/tag/learning.html">learning</a> </p>
-</footer><!-- /.post-info -->                <p>Два онлайн ресурса для интерактивного обучения таким языкам программирования как <strong>Java</strong>,<strong>Python</strong> и <strong>JavaScript</strong>.Гуру озвученных языков можно даже не смотреть, разве только для того чтобы потом посоветовать менее просвещенным товарищам.</p>
+<li>Computer Scientists должны знать математику и это ошибочно от нее уходить. Информатика тесно ...</li></ol></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a> &middot; September 2010
+                            </p>
+                        </header>
+                    </section>
+                    <section class="post">
+                        <header class="post-header">
+                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/onlain-resursy-codecademycom-i-codingbatcom.html">Онлайн ресурсы codecademy.com и codingbat.com</a></h3>
+                            <p class="post-meta"><p>Два онлайн ресурса для интерактивного обучения таким языкам программирования как <strong>Java</strong>,<strong>Python</strong> и <strong>JavaScript</strong>.Гуру озвученных языков можно даже не смотреть, разве только для того чтобы потом посоветовать менее просвещенным товарищам.</p>
 <p>Но все же лучше один раз попробовать самому, чем сто раз услышать от кого-либо:</p>
 <ul>
-<li><a href="http://www.codecademy.com/">http://www.codecademy.com/</a> (JavaScript ...</li></ul>
-                <a class="readmore" href="http://vdmitriyev.github.io/blog/onlain-resursy-codecademycom-i-codingbatcom.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-                </ol><!-- /#posts-list -->
-                </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="https://twitter.com/vdmitriyev">Twitter</a></li>
-                            <li><a href="https://vdmitriyev.wordpress.com/">Wordpress</a></li>
-                            <li><a href="http://dmitriyev.tumblr.com/">Tumblr</a></li>
-                            <li><a href="https://github.com/vdmitriyev">GitHub</a></li>
-                            <li><a href="http://www.researchgate.net/profile/Viktor_Dmitriyev">ResearchGate</a></li>
-                            <li><a href="http://orcid.org/0000-0001-5661-4587">Orcid</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+<li><a href="http://www.codecademy.com/">http://www.codecademy.com/</a> (JavaScript ...</li></ul></p>
+                            <p class="post-meta">
+                                in <a href="http://vdmitriyev.github.io/blog/category/raznoe.html">разное</a> &middot; August 2010
+                            </p>
+                        </header>
+                    </section>
+<div class="pagination-wrapper content-subhead">
+</div><footer class="footer">
+    <p>&copy; Viktor Dmitriyev &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
 
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-59176821-3']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
     </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-59176821-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+
 </body>
 </html>

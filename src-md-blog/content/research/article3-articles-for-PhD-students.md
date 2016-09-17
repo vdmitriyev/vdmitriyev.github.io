@@ -11,6 +11,7 @@ Here is the collection of articles I just wrote above:
 * [The Really Obvious (but All-Too-Often-Ignored) Guide to Getting Published](https://chroniclevitae.com/news/566-the-really-obvious-but-all-too-often-ignored-guide-to-getting-published)
 * [Overview of Science/Engineering Ph.D. Program Requirements](http://www.pgbovine.net/PhD-overview.htm)
 * [10 ways to make the most of your time as a PhD student](http://www.theguardian.com/higher-education-network/2014/nov/25/10-ways-to-make-the-most-of-your-time-as-a-phd-student)
+* [A Survival Guide to a PhD](http://karpathy.github.io/2016/09/07/phd/) **added on 17.09.2016**
 
 Additional articles related to PhD experience (added on 17.09.2015):
 

@@ -1,20 +1,25 @@
-Title: Materials on In-Memory Computing
-Date: 2016-10-10 13:00
-Tags: in-memory, research, materials, links
+Title: Online Materials on In-Memory Computing
+Date: 2016-10-11 17:30
+Tags: in-memory computing, in-memory, in-memory databases, research, materials, links
+
+<center>
+    ![Power To RAM]({filename}../images/random/in-memory-materials.png)
+</center>
 
 Unfortunately, there is not much materials in form of text books available that are explicitly dedicated to explain in-memory computing and in-memory database in details. That's why for a moment most valuable and usable sources of information in this domain are mainly blog articles, online courses, source code documentation and scientific publications. Please, find below links to some online courses (free once) and other useful materials. An bried technological overview can be found in following post [Innovations of In-Memory Data Management](https://hpi.de/plattner/research/in-memory-data-management-for-enterprise-systems/innovations.html).
 
 ### SAP HANA (online courses)
 
-https://openhpi.de/course/inmemorydatabases
-https://open.sap.com/courses/hanaintro1
-https://open.sap.com/courses/hana1
-https://open.sap.com/courses/hana2
-https://open.sap.com/courses/hana3
-https://open.sap.com/courses/hana4
-https://open.sap.com/courses/hana5
+* [In-Memory Data Management 2015](https://open.hpi.de/courses/imdb2015)
+* [In-Memory Data Management In a Nutshell](https://open.sap.com/courses/hana-warmup)
+* [Introduction to Software Development on SAP HANA](https://open.sap.com/courses/hana1)
+* [Next Steps in Software Development on SAP HANA](https://open.sap.com/courses/hana2)
+* [Software Development on SAP HANA (Delta SPS 09)](https://open.sap.com/courses/hana3)
+* [Software Development on SAP HANA (Delta SPS 11)](https://open.sap.com/courses/hana4)
+* [Software Development on SAP HANA (Update Q4/2016)](https://open.sap.com/courses/hana5)
+* [Text Analytics with SAP HANA Platform](https://open.sap.com/courses/hsta1)
 
-###  Try SAP HANA
+### Try SAP HANA
 
 * [SAP HANA Cloud Platform](https://hcp.sap.com/developers.html)
 * [SAP HANA Express](https://go.sap.com/developer/topics/sap-hana-express.html)
@@ -29,11 +34,11 @@ https://open.sap.com/courses/hana5
 * You can use your own installation from official repository (as long as it's [open source](http://spark.apache.org/downloads.html))
 * Sandbox from [Hortonworks]http://hortonworks.com/products/sandbox/
 
-### Other "In-Memory" field players (there are others as well)
+### Other "In-Memory" field players (there are others ones as well)
 
-* https://www.voltdb.com/
-* http://www.memsql.com/
-* https://www.gridgain.com/
+* [https://www.voltdb.com/](https://www.voltdb.com/)
+* [http://www.memsql.com/](http://www.memsql.com/)
+* [https://www.gridgain.com/](https://www.gridgain.com/)
 
 ### Collection of various materials on in-memory computing
 

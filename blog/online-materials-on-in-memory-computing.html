@@ -7,14 +7,21 @@
 
         <link rel="alternate"  href="http://vdmitriyev.github.io/blog/feeds/all.atom.xml" type="application/atom+xml" title="Viktor Dmitriyev Full Atom Feed"/>
 
-        <title>materials tag // Viktor Dmitriyev // </title>
+        <title>Online Materials on In-Memory Computing // Viktor Dmitriyev // </title>
 
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://vdmitriyev.github.io/blog/theme/css/pure.css">
+    <link rel="stylesheet" href="http://vdmitriyev.github.io/blog/theme/css/pygments.css">
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
 </head>
 
 <body>
@@ -56,50 +63,68 @@
         </div>
     <div class="pure-u">
         <div class="content">
-            <!-- A wrapper for all the blog posts -->
-            <div class="posts">
-                <h1 class="content-subhead">
-Posts tagged 'materials'                </h1>
-                    <section class="post">
-                        <header class="post-header">
-                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/online-materials-on-in-memory-computing.html">Online Materials on In-Memory Computing</a></h3>
-                            <p class="post-meta"><p><center>
+            <section class="post">
+                <header class="post-header">
+                    <h1>Online Materials on In-Memory Computing</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="http://vdmitriyev.github.io/blog/tag/in-memory-computing.html">in-memory computing</a>
+                                <a class="post-category" href="http://vdmitriyev.github.io/blog/tag/in-memory.html">in-memory</a>
+                                <a class="post-category" href="http://vdmitriyev.github.io/blog/tag/in-memory-databases.html">in-memory databases</a>
+                                <a class="post-category" href="http://vdmitriyev.github.io/blog/tag/research.html">research</a>
+                                <a class="post-category" href="http://vdmitriyev.github.io/blog/tag/materials.html">materials</a>
+                                <a class="post-category" href="http://vdmitriyev.github.io/blog/tag/links.html">links</a>
+                        </p>
+                </header>
+            </section>
+            <p><center>
     <img alt="Power To RAM" src="http://vdmitriyev.github.io/blog/images/random/in-memory-materials.png" />
 </center></p>
-<p>Unfortunately, there is not much materials in form of text books available that are explicitly dedicated to explain in-memory computing and in-memory database in details. That's why for a moment most valuable and usable sources of information in this domain are mainly blog articles, online courses, source code documentation ...</p></p>
-                            <p class="post-meta">
-                                in <a href="http://vdmitriyev.github.io/blog/category/research.html">research</a> &middot; October 2016
-                            </p>
-                        </header>
-                    </section>
-                    <section class="post">
-                        <header class="post-header">
-                            <h3><a class="post-title" href="http://vdmitriyev.github.io/blog/worth-checking-resources-on-visualization.html">Worth Checking Resources On Visualization</a></h3>
-                            <p class="post-meta"><p>Collection of the resources about the generic visualization techniques, examples, tools that I personally like and found worth checking and seeing at least once.</p>
-<p><br /></p>
-<h2>Visualization techniques and best practices</h2>
+<p>Unfortunately, there is not much materials in form of text books available that are explicitly dedicated to explain in-memory computing and in-memory database in details. That's why for a moment most valuable and usable sources of information in this domain are mainly blog articles, online courses, source code documentation and scientific publications. Please, find below links to some online courses (free once) and other useful materials. An bried technological overview can be found in following post <a href="https://hpi.de/plattner/research/in-memory-data-management-for-enterprise-systems/innovations.html">Innovations of In-Memory Data Management</a>.</p>
+<h3>SAP HANA (online courses)</h3>
 <ul>
-<li><strong>The Data Visualization Catalog</strong><ul>
-<li><a href="http://www.datavizcatalogue.com/index.html">http://www.datavizcatalogue.com/index.html</a></li>
+<li><a href="https://open.hpi.de/courses/imdb2015">In-Memory Data Management 2015</a></li>
+<li><a href="https://open.sap.com/courses/hana-warmup">In-Memory Data Management In a Nutshell</a></li>
+<li><a href="https://open.sap.com/courses/hana1">Introduction to Software Development on SAP HANA</a></li>
+<li><a href="https://open.sap.com/courses/hana2">Next Steps in Software Development on SAP HANA</a></li>
+<li><a href="https://open.sap.com/courses/hana3">Software Development on SAP HANA (Delta SPS 09)</a></li>
+<li><a href="https://open.sap.com/courses/hana4">Software Development on SAP HANA (Delta SPS 11)</a></li>
+<li><a href="https://open.sap.com/courses/hana5">Software Development on SAP HANA (Update Q4/2016)</a></li>
+<li><a href="https://open.sap.com/courses/hsta1">Text Analytics with SAP HANA Platform</a></li>
 </ul>
-</li>
-<li>
-<p><strong>A Periodic Table of Visualization Methods</strong></p>
+<h3>Try SAP HANA</h3>
 <ul>
-<li><a href="http://www.visual-literacy.org/periodic_table/periodic_table.html">http://www.visual-literacy.org/periodic_table ...</a></li></ul></li></ul></p>
-                            <p class="post-meta">
-                                in <a href="http://vdmitriyev.github.io/blog/category/interesting.html">interesting</a> &middot; February 2015
-                            </p>
-                        </header>
-                    </section>
-<div class="pagination-wrapper content-subhead">
-</div><footer class="footer">
+<li><a href="https://hcp.sap.com/developers.html">SAP HANA Cloud Platform</a></li>
+<li><a href="https://go.sap.com/developer/topics/sap-hana-express.html">SAP HANA Express</a></li>
+</ul>
+<h3>Apache Spark (online courses)</h3>
+<ul>
+<li><a href="https://www.edx.org/course/big-data-analysis-apache-spark-uc-berkeleyx-cs110x">Big Data Analysis with Apache Spark</a></li>
+<li><a href="https://www.edx.org/course/introduction-apache-spark-uc-berkeleyx-cs105x">Introduction to Apache Spark</a></li>
+</ul>
+<h3>Try Apache Spark</h3>
+<ul>
+<li>You can use your own installation from official repository (as long as it's <a href="http://spark.apache.org/downloads.html">open source</a>)</li>
+<li>Sandbox from [Hortonworks]http://hortonworks.com/products/sandbox/</li>
+</ul>
+<h3>Other "In-Memory" field players (there are others ones as well)</h3>
+<ul>
+<li><a href="https://www.voltdb.com/">https://www.voltdb.com/</a></li>
+<li><a href="http://www.memsql.com/">http://www.memsql.com/</a></li>
+<li><a href="https://www.gridgain.com/">https://www.gridgain.com/</a></li>
+</ul>
+<h3>Collection of various materials on in-memory computing</h3>
+<ul>
+<li><a href="http://www.odbms.org/free-downloads-and-links/in-memory-databases/">In-Memory Databases on ODBMS.org</a></li>
+<li><a href="http://www.dbms2.com/category/memory-centric-data-management/in-memory-dbms/">In-memory DBMS by Curt Monash</a></li>
+</ul>
+<p>I hope that above list of resources could help you to improve your awareness about in-memory computing and databases</p>
+            <a href="#" class="go-top">Go Top</a>
+<footer class="footer">
     <p>&copy; Viktor Dmitriyev &ndash;
         Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
         for <a href="http://blog.getpelican.com/">Pelican</a>
     </p>
-</footer>            </div>
-        </div>
+</footer>        </div>
     </div>
     </div>
     <script>

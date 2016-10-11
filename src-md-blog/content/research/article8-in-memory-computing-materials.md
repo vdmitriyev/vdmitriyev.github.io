@@ -32,7 +32,7 @@ Unfortunately, there is not much materials in form of text books available that 
 ###  Try Apache Spark
 
 * You can use your own installation from official repository (as long as it's [open source](http://spark.apache.org/downloads.html))
-* Sandbox from [Hortonworks]http://hortonworks.com/products/sandbox/
+* Sandbox from [Hortonworks](http://hortonworks.com/products/sandbox/)
 
 ### Other "In-Memory" field players (there are others ones as well)
 

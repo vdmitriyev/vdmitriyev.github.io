@@ -27,7 +27,7 @@
 &lt;h3&gt;Try Apache Spark&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;You can use your own installation from official repository (as long as it's &lt;a href="http://spark.apache.org/downloads.html"&gt;open source&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Sandbox from [Hortonworks]http://hortonworks.com/products/sandbox/&lt;/li&gt;
+&lt;li&gt;Sandbox from &lt;a href="http://hortonworks.com/products/sandbox/"&gt;Hortonworks&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;Other "In-Memory" field players (there are others ones as well)&lt;/h3&gt;
 &lt;ul&gt;

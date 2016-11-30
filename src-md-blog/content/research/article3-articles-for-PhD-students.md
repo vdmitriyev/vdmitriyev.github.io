@@ -12,7 +12,7 @@ Here is the collection of articles I just wrote above:
 * [Overview of Science/Engineering Ph.D. Program Requirements](http://www.pgbovine.net/PhD-overview.htm)
 * [10 ways to make the most of your time as a PhD student](http://www.theguardian.com/higher-education-network/2014/nov/25/10-ways-to-make-the-most-of-your-time-as-a-phd-student)
 * [A Survival Guide to a PhD](http://karpathy.github.io/2016/09/07/phd/) **added on 17.09.2016**
-* [How to Be a Successful PhD Student (in Computer Science (in NLP/ML))](https://people.cs.umass.edu/~wallach/how_to_be_a_successful_phd_student.pdf) added on 30.11.2016
+* [How to Be a Successful PhD Student (in Computer Science (in NLP/ML))](https://people.cs.umass.edu/~wallach/how_to_be_a_successful_phd_student.pdf) **added on 30.11.2016**
 
 Additional articles related to PhD experience (added on 17.09.2015):
 
@@ -25,7 +25,7 @@ Additional articles related to PhD experience (added on 17.09.2015):
 * [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/)
     - This article contains description of concrete problems faced during and after PhD and offers solutions to them
 
-Additional collection no "daily business" of any PhD student:
+Additional collection of "daily business" for any PhD student:
 
 * [Getting published: What distinguishes a good manuscript from a bad one?](https://www.elsevier.com/connect/get-published-what-distinguishes-a-good-manuscript-from-a-bad-one)
     - One page visualization with clearly stayed p

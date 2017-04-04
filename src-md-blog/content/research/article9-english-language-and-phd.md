@@ -7,6 +7,7 @@ There is always a chance that you will be writing your doctoral work not in your
 List of articles related to english language that can be really useful:
 
 * [How to Use Articles (a/an/the)](https://owl.english.purdue.edu/owl/resource/540/01/)
+* [Indefinite Article With A Plural Noun](https://www.grammarly.com/handbook/grammar/articles/10/indefinite-article-with-a-plural-noun/)
 * [Is there a simple rule for "the" article?](https://www.grammarly.com/answers/questions/48-is-there-a-simple-rule-for-the-article/)
     + See a list with 8 rules
 * [Adjectives, Articles and Adverbs](https://students.case.edu/academic/resources/writing/grammar/speech1.html)

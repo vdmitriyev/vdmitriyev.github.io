@@ -9,29 +9,29 @@ This blog post offers collection of articles, which are worth reading, if you s
 Here is the collection of articles I have mentioned above:
 
 * [Overview of Science/Engineering Ph.D. Program Requirements](http://www.pgbovine.net/PhD-overview.htm)
-* [A Survival Guide to a PhD](http://karpathy.github.io/2016/09/07/phd/) **added on 17.09.2016**
-* [How to Be a Successful PhD Student (in Computer Science (in NLP/ML))](https://people.cs.umass.edu/~wallach/how_to_be_a_successful_phd_student.pdf) **added on 30.11.2016**
+* [A Survival Guide to a PhD](http://karpathy.github.io/2016/09/07/phd/) (added on **17.09.2016**)
+* [How to Be a Successful PhD Student (in Computer Science (in NLP/ML))](https://people.cs.umass.edu/~wallach/how_to_be_a_successful_phd_student.pdf) (added on **30.11.2016**)
 * [10 ways to make the most of your time as a PhD student](http://www.theguardian.com/higher-education-network/2014/nov/25/10-ways-to-make-the-most-of-your-time-as-a-phd-student)
 * [The Really Obvious (but All-Too-Often-Ignored) Guide to Getting Published](https://chroniclevitae.com/news/566-the-really-obvious-but-all-too-often-ignored-guide-to-getting-published)
-* [Doing a PhD with us by professor Fabio Casati](https://sites.google.com/site/sphoebss/doing-a-phd-with-me) (added on 29.05.2017)
+* [Doing a PhD with us by professor Fabio Casati](https://sites.google.com/site/sphoebss/doing-a-phd-with-me) (added on **29.05.2017**)
     - Really short, but insightful and actionable write up, which helps a PhD student to understand what **should** and what **should not** be done (a practical approach)
 
-Additional articles related to PhD experience (added on 17.09.2015):
+Some additional articles related to PhD experience that can be really helpful.
 
-* [5 secrets to surviving (and thriving in) a PhD program](http://www.elsevier.com/connect/5-secrets-to-surviving-and-progressing-in-a-phd-program)
+* [5 secrets to surviving (and thriving in) a PhD program](http://www.elsevier.com/connect/5-secrets-to-surviving-and-progressing-in-a-phd-program) (added on **17.09.2015**)
     - Drops a light on topics which should be really taken into consideration during PhD study. Describes in a really good way how to distinguish between various dissertation forms and formats. Article also contains references to multiple research papers that discuss various aspects of research process and methodologies underneath.
-* [10 ways to make your PhD experience easier and more enjoyable](http://www.elsevier.com/connect/10-ways-to-make-your-phd-experience-easier-and-more-enjoyable)
+* [10 ways to make your PhD experience easier and more enjoyable](http://www.elsevier.com/connect/10-ways-to-make-your-phd-experience-easier-and-more-enjoyable) (added on **17.09.2015**)
     - Notes of a PhD students who stays close to practice problems and offers suitable at least for him solutions. Most of the solutions are not 'holy Grail' and silver bullet for anyone to use, but they sound very logical and I came to the same solutions independently and tried them on my own
-* [So You Want to do a PhD? – Your Survival Guide (Part I)](http://aspiringprofessionalshub.com/2015/06/04/so-you-want-to-do-a-phd-your-survival-guidepart-1/)
+* [So You Want to do a PhD? – Your Survival Guide (Part I)](http://aspiringprofessionalshub.com/2015/06/04/so-you-want-to-do-a-phd-your-survival-guidepart-1/) (added on **17.09.2015**)
     - This article is more or less about 'philosophical' part of PhD journey
-* [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/)
+* [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/) (added on **17.09.2015**)
     - This article contains description of concrete problems faced during and after PhD and offers solutions to them
-* [researcher organise thyself](https://thesiswhisperer.com/2015/09/23/researcher-organise-thyself/) (added on 29.05.2017)
+* [researcher organise thyself](https://thesiswhisperer.com/2015/09/23/researcher-organise-thyself/) (added on **29.05.2017**)
     - it's about how to organize all your activities in a way, that is will help your further academic career
 
 Additional collection of "daily business" for any PhD student:
 
 * [Getting published: What distinguishes a good manuscript from a bad one?](https://www.elsevier.com/connect/get-published-what-distinguishes-a-good-manuscript-from-a-bad-one)
-    - One page visualization with clearly stayed p
+    - One page visualization with clearly stayed how evaluate your own publication quality
 
 Wish you smooth defense at the end of you research journey. And try to have fun while you are working on problems no one solved before.

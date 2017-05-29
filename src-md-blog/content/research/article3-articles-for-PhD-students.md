@@ -6,13 +6,15 @@ As time of your master degree pass by, or any other "after big study activity",
 
 This blog post offers collection of articles, which are worth reading, if you started to think about continuing your education as a PhD student somewhere in the world. Articles describe really good concepts behind the life of a PhD student. But before start reading them, be aware that most of them are focused on the Computer Science domain. Materials also can be reviewed while your are in process of achieving your PhD degree or after you finally got it.
 
-Here is the collection of articles I just wrote above:
+Here is the collection of articles I have mentioned above:
 
 * [Overview of Science/Engineering Ph.D. Program Requirements](http://www.pgbovine.net/PhD-overview.htm)
 * [A Survival Guide to a PhD](http://karpathy.github.io/2016/09/07/phd/) **added on 17.09.2016**
 * [How to Be a Successful PhD Student (in Computer Science (in NLP/ML))](https://people.cs.umass.edu/~wallach/how_to_be_a_successful_phd_student.pdf) **added on 30.11.2016**
 * [10 ways to make the most of your time as a PhD student](http://www.theguardian.com/higher-education-network/2014/nov/25/10-ways-to-make-the-most-of-your-time-as-a-phd-student)
 * [The Really Obvious (but All-Too-Often-Ignored) Guide to Getting Published](https://chroniclevitae.com/news/566-the-really-obvious-but-all-too-often-ignored-guide-to-getting-published)
+* [Doing a PhD with us by professor Fabio Casati](https://sites.google.com/site/sphoebss/doing-a-phd-with-me) (added on 29.05.2017)
+    - Really short, but insightful and actionable write up, which helps a PhD student to understand what **should** and what **should not** be done (a practical approach)
 
 Additional articles related to PhD experience (added on 17.09.2015):
 
@@ -24,6 +26,8 @@ Additional articles related to PhD experience (added on 17.09.2015):
     - This article is more or less about 'philosophical' part of PhD journey
 * [So You Want to do a PhD? – Your Survival Guide (Part II)](http://aspiringprofessionalshub.com/2015/08/03/so-you-want-to-do-a-phd-your-survival-guide-part-ii/)
     - This article contains description of concrete problems faced during and after PhD and offers solutions to them
+* [researcher organise thyself](https://thesiswhisperer.com/2015/09/23/researcher-organise-thyself/) (added on 29.05.2017)
+    - it's about how to organize all your activities in a way, that is will help your further academic career
 
 Additional collection of "daily business" for any PhD student:
 

@@ -28,6 +28,7 @@ Some additional articles related to PhD experience that can be really helpful.
     - This article contains description of concrete problems faced during and after PhD and offers solutions to them
 * [researcher organise thyself](https://thesiswhisperer.com/2015/09/23/researcher-organise-thyself/) (added on **29.05.2017**)
     - it's about how to organize all your activities in a way, that is will help your further academic career
+* [How do you finish a PhD when, as a working-class student, you don't feel you belong?](https://www.theguardian.com/higher-education-network/2017/aug/11/how-do-you-finish-a-phd-when-you-dont-feel-you-belong-at-university) (added on **04.09.2017**)
 
 Additional collection of "daily business" for any PhD student:
 

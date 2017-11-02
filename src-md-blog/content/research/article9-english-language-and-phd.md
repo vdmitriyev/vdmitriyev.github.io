@@ -11,6 +11,7 @@ List of articles related to english language that can be really useful:
 * [Is there a simple rule for "the" article?](https://www.grammarly.com/answers/questions/48-is-there-a-simple-rule-for-the-article/)
     + See a list with 8 rules
 * [Adjectives, Articles and Adverbs](https://students.case.edu/academic/resources/writing/grammar/speech1.html)
+* [Which words in a title should be capitalized?](https://english.stackexchange.com/questions/14/which-words-in-a-title-should-be-capitalized)
 
 List of useful books:
 

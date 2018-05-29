@@ -36,6 +36,7 @@ In case you are traveling a lot, listening to podcasts can be really grate time 
 
 I'm not a big fan of monitoring blogs, I prefer to get updates on new blog post directly from authors (usually via Twitter) or via various digests and subscriptions. But most of the time blogs can be a very useful sources of knowledge:
 
+* [Towards Data Science - Sharing concepts, ideas, and codes](https://towardsdatascience.com/)
 * [Sebastian Raschka's Blog](http://sebastianraschka.com)
 * [Machine Learning](https://charlesmartin14.wordpress.com)
 * [FastML](http://fastml.com)

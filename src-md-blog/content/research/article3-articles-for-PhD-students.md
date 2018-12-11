@@ -35,4 +35,8 @@ Additional collection of "daily business" for any PhD student:
 * [Getting published: What distinguishes a good manuscript from a bad one?](https://www.elsevier.com/connect/get-published-what-distinguishes-a-good-manuscript-from-a-bad-one)
     - One page visualization with clearly stayed how evaluate your own publication quality
 
+A collection that generalizes various researcher groups in computer science and co. :
+
+* [An Updated Guide on Where to Apply for a PhD in Databases in the US (2018)](https://www.cs.cmu.edu/~pavlo/blog/2018/11/an-updated-guide-on-where-to-apply-for-a-phd-in-databases-in-the-us-2018.html) (added on **11.12.2018**)
+
 Wish you smooth defense at the end of you research journey. And try to have fun while you are working on problems no one solved before.

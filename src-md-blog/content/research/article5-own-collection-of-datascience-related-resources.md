@@ -23,7 +23,7 @@ I'm subscribed to the following newsletters and I'm trying to dedicate 1-2 hours
 * [The Yhat Blog](http://blog.yhathq.com/)
     - *The Yhat Blog is mainly about machine learning, data science, engineering, DevOps etc.*
 
-In case you are traveling a lot, listening to podcasts can be really grate time saver for you. Here is my collection of podcasts I'm usually paying my attention to:
+In case you are traveling a lot, listening to podcasts can be a really great time saver for you. Here is my collection of podcasts I'm usually paying my attention to:
 
 * [Talking Machines](http://www.thetalkingmachines.com/)
     - *An amazing collection of inteviews with most advanced researchs and advocates of machine learning, data mining and statistical learning*
@@ -45,4 +45,4 @@ I'm not a big fan of monitoring blogs, I prefer to get updates on new blog post 
 * [Probably Overthinking It](http://allendowney.blogspot.com/)
 * [DataTau](http://www.datatau.com/)
 
-Don't forget to subscribe to the interesting people and companies you want to trace in Twitter. Here is whom I [follow](https://twitter.com/vdmitriyev/following) on twitter (to see it you need to be logged into twitter).
+Don't forget to subscribe to the interesting people and companies you want to trace on Twitter. Here is whom I [follow](https://twitter.com/vdmitriyev/following) on twitter (to see it you need to be logged into twitter).

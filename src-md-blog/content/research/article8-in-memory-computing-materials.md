@@ -6,7 +6,7 @@ Tags: in-memory computing, in-memory, in-memory databases, research, materials, 
     ![Power To RAM]({filename}../images/random/in-memory-materials.png)
 </center>
 
-Unfortunately, there is not much materials in form of text books available that are explicitly dedicated to explain in-memory computing and in-memory database in details. That's why for a moment most valuable and usable sources of information in this domain are mainly blog articles, online courses, source code documentation and scientific publications. Please, find below links to some online courses (free once) and other useful materials. An bried technological overview can be found in following post [Innovations of In-Memory Data Management](https://hpi.de/plattner/research/in-memory-data-management-for-enterprise-systems/innovations.html).
+Unfortunately, there are not many materials in the form of textbooks available that are explicitly dedicated to explaining in-memory computing and in-memory databases in detail. That's why for a moment most valuable and usable sources of information in this domain are mainly blog articles, online courses, source code documentation, and scientific publications. Please, find below links to some online courses (free once) and other useful materials. A brief overview of technologies can be found in the following post [Innovations of In-Memory Data Management](https://hpi.de/plattner/research/in-memory-data-management-for-enterprise-systems/innovations.html).
 
 ### SAP HANA (online courses)
 
@@ -31,10 +31,10 @@ Unfortunately, there is not much materials in form of text books available that 
 
 ###  Try Apache Spark
 
-* You can use your own installation from official repository (as long as it's [open source](http://spark.apache.org/downloads.html))
-* Sandbox from [Hortonworks](http://hortonworks.com/products/sandbox/)
+* You can use your own installation from an official repository (as long as it's [open source](http://spark.apache.org/downloads.html))
+* Sandbox from here [Hortonworks](http://hortonworks.com/products/sandbox/)
 
-### Other "In-Memory" field players (there are others ones as well)
+### Other "In-Memory" field players (there are other ones as well)
 
 * [https://www.voltdb.com/](https://www.voltdb.com/)
 * [http://www.memsql.com/](http://www.memsql.com/)
@@ -45,4 +45,4 @@ Unfortunately, there is not much materials in form of text books available that 
 * [In-Memory Databases on ODBMS.org](http://www.odbms.org/free-downloads-and-links/in-memory-databases/)
 * [In-memory DBMS by Curt Monash](http://www.dbms2.com/category/memory-centric-data-management/in-memory-dbms/)
 
-I hope that above list of resources could help you to improve your awareness about in-memory computing and databases
+I hope that the above list of resources could help you to improve your awareness about in-memory computing and databases.

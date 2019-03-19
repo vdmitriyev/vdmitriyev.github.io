@@ -4,7 +4,7 @@ Tags: computer science, publication, research, collection
 
 ### About
 
-Collection of an online resources with other additional tricks for searching scientific/research publication.
+This is a collection of online resources with other additional tricks for searching scientific/research publications.
 
 ### Collection of Resource for Searching Scientific Publications
 

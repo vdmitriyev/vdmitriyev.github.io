@@ -2,9 +2,9 @@ Title: Articles for PhD Students
 Date: 2015-01-28 11:40
 Tags: collection, phd, research, tips
 
-As time of your master degree pass by, or any other "after big study activity", people stars to think about the future. And one of the possible "future step" that they consider as an important and very prominent one is doing PhD.
+As a time of your master degree pass by, or any other "after big study activity", people start to think about the future. And one of the possible "future step" that they consider as an important and very prominent one is doing a PhD.
 
-This blog post offers collection of articles, which are worth reading, if you started to think about continuing your education as a PhD student somewhere in the world. Articles describe really good concepts behind the life of a PhD student. But before start reading them, be aware that most of them are focused on the Computer Science domain. Materials also can be reviewed while your are in process of achieving your PhD degree or after you finally got it.
+This blog post offers a collection of articles, which are worth reading if you started to think about continuing your education as a PhD student somewhere in the world. Articles describe really good concepts behind the life of a PhD student. But before start reading them, be aware that most of them are focused on the Computer Science domain. Materials also can be reviewed while you are in the process of achieving your PhD degree or after you finally got it.
 
 Here is the collection of articles I have mentioned above:
 
@@ -39,4 +39,4 @@ A collection that generalizes various researcher groups in computer science and 
 
 * [An Updated Guide on Where to Apply for a PhD in Databases in the US (2018)](https://www.cs.cmu.edu/~pavlo/blog/2018/11/an-updated-guide-on-where-to-apply-for-a-phd-in-databases-in-the-us-2018.html) (added on **11.12.2018**)
 
-Wish you smooth defense at the end of you research journey. And try to have fun while you are working on problems no one solved before.
+I wish you smooth defense at the end of your research journey. And try to have fun while you are working on problems no one solved before.

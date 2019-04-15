@@ -12,6 +12,7 @@ List of articles related to the English language that can be really useful:
     + See a list with 8 rules
 * [Adjectives, Articles and Adverbs](https://students.case.edu/academic/resources/writing/grammar/speech1.html)
 * [Which words in a title should be capitalized?](https://english.stackexchange.com/questions/14/which-words-in-a-title-should-be-capitalized)
+* [Ten common mistakes made by English learners](http://languagelearningbase.com/86372/ten-common-mistakes-made-by-english-learners)
 
 List of useful books:
 
